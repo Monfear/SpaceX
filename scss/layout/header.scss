@@ -1,0 +1,325 @@
+@use './../common/mixins.scss' as *;
+@use './../common/variables.scss' as *;
+
+.Header {
+    height: 100vh;
+    background-image: url('./../img/header_background_mobile.jpg');
+    background-size: cover;
+    background-position: -110px center;
+    color: $color-white;
+
+    & .navbar {
+        @include container;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        position: fixed;
+        z-index: 101;
+
+        border-bottom: 2px solid transparent;
+        transition: all 0.5s ease-out;
+
+        &.scrolled {
+            border-bottom: 2px solid $color-white;
+            background-color: $color-black;
+        }
+
+        &__logo {
+            width: 240px;
+
+            &__image {
+                width: 100%;
+            }
+        }
+
+        &__hamburger {
+            width: 30px;
+            height: 30px;
+            background-color: transparent;
+            border: none;
+
+            position: relative;
+
+            cursor: pointer;
+            z-index: 102;
+
+            &__line {
+                position: absolute;
+
+                display: block;
+                background-color: $color-white;
+                width: 100%;
+                height: 3px;
+
+                transition: all 0.5s ease-in;
+
+                &:nth-child(1) {
+                    top: 0;
+                }
+
+                &:nth-child(2) {
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                &:nth-child(3) {
+                    bottom: 0;
+                }
+            }
+
+            &.active .navbar__hamburger__line:nth-child(1) {
+                top: 50%;
+                transform: rotateZ(225deg);
+            }
+
+            &.active .navbar__hamburger__line:nth-child(2) {
+                background-color: transparent;
+            }
+
+            &.active .navbar__hamburger__line:nth-child(3) {
+                top: 50%;
+                transform: rotateZ(-225deg);
+            }
+        }
+
+        &__nav {
+            background-color: $color-black;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: stretch;
+
+            text-align: right;
+
+            height: 100vh;
+            padding: 3.5rem 1rem 2rem 2rem;
+
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            transition: all 0.5s ease;
+
+            &.inactive {
+                transform: translateX(220%) skew(25deg);
+            }
+
+            &__link {
+                width: 100%;
+                padding: 0.5rem 0;
+
+                color: $color-white;
+                text-transform: uppercase;
+                font-size: $text-medium;
+                border-bottom: 1px solid $color-grey-dark;
+
+                transition: all 0.2s ease;
+
+                &:active {
+                    color: $color-grey-light;
+                }
+            }
+        }
+    }
+
+    & .content {
+        @include container;
+
+        width: 70%;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 0 0.5rem 0.5rem 0;
+
+        position: absolute;
+        bottom: 11rem;
+
+        animation: showContent 1s ease-out;
+
+        &__subheading {
+            text-transform: uppercase;
+            font-size: $text-big;
+        }
+
+        &__heading {
+            text-transform: uppercase;
+            font-size: $heading-big;
+        }
+
+        &__cta {
+            position: relative;
+
+            color: $color-white;
+            background-color: transparent;
+            border: 2px solid $color-white;
+
+            width: 160px;
+            height: 50px;
+            margin-top: 1rem;
+
+            text-transform: uppercase;
+            font-weight: bold;
+
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.5s;
+
+            z-index: 0;
+
+            &:active {
+                background-color: $color-white;
+                color: $color-black;
+            }
+        }
+    }
+}
+
+@keyframes showContent {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@media only screen and (max-height: $mq-small) and (orientation: landscape) {
+    .Header {
+        background-position: center bottom;
+
+        & .content {
+            bottom: 4rem;
+            width: 55%;
+
+            &__cta {
+                margin-top: 1.5rem;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $mq-medium) {
+    .Header {
+        & .content {
+            bottom: 20rem;
+            width: 60%;
+            padding: 1.5rem;
+
+            &__cta {
+                margin-top: 2rem;
+            }
+
+            &__heading {
+                font-size: $heading-large;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $mq-big) {
+    .Header {
+        background-image: url('./../img/header_background.webp');
+        background-position: center;
+
+        & .navbar {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+
+            &__hamburger {
+                display: none;
+            }
+
+            &__nav {
+                position: static;
+                height: auto;
+                flex-direction: row;
+                gap: 1rem;
+                padding: 0;
+                text-align: left;
+                background-color: transparent;
+
+                &__link {
+                    width: auto;
+                    font-weight: bold;
+                    border-bottom: none;
+
+                    position: relative;
+
+                    &:hover {
+                        color: $color-grey-light;
+                    }
+
+                    &::after {
+                        position: absolute;
+                        content: '';
+                        left: 0;
+                        bottom: 0;
+
+                        background-color: $color-white;
+
+                        width: 100%;
+                        height: 2px;
+
+                        transform: scaleX(0);
+                        transform-origin: right center;
+                        transition: transform 0.5s ease;
+                    }
+
+                    &:hover::after {
+                        transform: scaleX(1);
+                        background-color: $color-grey-light;
+                        transform-origin: left center;
+                    }
+                }
+            }
+        }
+
+        & .content {
+            bottom: 12rem;
+            width: 40%;
+
+            &__subheading {
+                font-size: $text-large;
+            }
+
+            &__heading {
+                font-size: $heading-xlarge;
+            }
+
+            &__cta {
+                width: 200px;
+                height: 60px;
+                font-size: $text-medium;
+
+                &:hover {
+                    color: $color-black;
+
+                    &::before {
+                        transform: translate(-50%, -50%) skew(45deg) scaleX(1);
+                    }
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+
+                    width: 140%;
+                    height: 140%;
+
+                    background-color: $color-white;
+
+                    transform: translate(-50%, -50%) skew(45deg) scaleX(0);
+                    transition: all 0.5s;
+
+                    z-index: -1;
+                }
+            }
+        }
+    }
+}

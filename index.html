@@ -5,13 +5,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>SpaceX</title>
+    <link rel="shortcut icon" href="./img/favicon.jpg" type="image/x-icon">
 
     <link rel="stylesheet" href="./scss/main.scss">
     <script src="./src/main.ts" defer></script>
 </head>
 
 <body>
+    <div class="Backdrop hide" data-backdrop></div>
+
+    <header class="Header">
+        <div class="navbar" data-navbar>
+            <div class="navbar__logo">
+                <img class="navbar__logo__image" src="./img/logo.png" alt="logo">
+            </div>
+
+            <button class="navbar__hamburger" data-hamburger>
+                <span class="navbar__hamburger__line"></span>
+                <span class="navbar__hamburger__line"></span>
+                <span class="navbar__hamburger__line"></span>
+            </button>
+
+            <div class="navbar__nav" data-nav>
+                <a class="navbar__nav__link" href="./pages/falcon9.html">falcon 9</a>
+                <a class="navbar__nav__link" href="./pages/falcon-heavy.html">falcon heavy</a>
+                <a class="navbar__nav__link" href="./pages/dragon.html">dragon</a>
+                <a class="navbar__nav__link" href="#">starship</a>
+                <a class="navbar__nav__link" href="#">human spaceflight</a>
+                <a class="navbar__nav__link" href="#">rideshare</a>
+                <a class="navbar__nav__link" href="#">shop</a>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2 class="content__subheading">upcoming launch</h2>
+            <h1 class="content__heading">crew-5 mission</h1>
+            <button class="content__cta">watch</button>
+        </div>
+    </header>
+
+    <section style="height:100vh ;"></section>
 
 </body>
 

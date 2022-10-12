@@ -1,3 +1,2 @@
-body {
-    background-color: aqua;
-}
+@use './common/base.scss';
+@use './layout/header.scss';

@@ -1,0 +1,15 @@
+@use './variables.scss' as *;
+
+@mixin container {
+    padding: 0.5rem;
+
+    @media (min-width: $mq-big) {
+        max-width: 95%;
+        margin: 0 auto;
+    }
+
+    @media (min-width: $mq-large) {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}

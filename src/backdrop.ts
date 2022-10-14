@@ -1,5 +1,3 @@
-import { Navbar } from './navbar';
-
 export class Backdrop {
     public backdropEl: HTMLDivElement = document.querySelector('[data-backdrop]') as HTMLDivElement;
 

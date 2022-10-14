@@ -187,9 +187,18 @@
                     height: auto;
                 }
 
-                &__error {
-                    color: hsl(0, 91%, 36%);
-                    // visibility: hidden;
+                &__message {
+                    visibility: hidden;
+
+                    &.success {
+                        color: hsl(120, 100%, 25%);
+                        visibility: visible;
+                    }
+
+                    &.error {
+                        color: hsl(0, 91%, 36%);
+                        visibility: visible;
+                    }
                 }
             }
         }

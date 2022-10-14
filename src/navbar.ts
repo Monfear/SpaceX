@@ -54,7 +54,7 @@ export class Navbar extends Common {
         this.nav.classList.add('inactive');
     }
 
-    public toggleMenu(): void {
+    private toggleMenu(): void {
         if (!this.isMenuOpen) {
             this.isMenuOpen = true;
 

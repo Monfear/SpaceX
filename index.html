@@ -6,11 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
     <title>SpaceX</title>
     <link rel="shortcut icon" href="./img/favicon.jpg" type="image/x-icon">
 
     <link rel="stylesheet" href="./scss/main.scss">
-    <script src="./src/main.ts" defer></script>
+    <script src="./src/main.ts" type="module" defer></script>
 </head>
 
 <body>
@@ -28,7 +30,7 @@
                 <span class="navbar__hamburger__line"></span>
             </button>
 
-            <div class="navbar__nav" data-nav>
+            <nav class="navbar__nav" data-nav>
                 <a class="navbar__nav__link" href="./pages/falcon9.html">falcon 9</a>
                 <a class="navbar__nav__link" href="./pages/falcon-heavy.html">falcon heavy</a>
                 <a class="navbar__nav__link" href="./pages/dragon.html">dragon</a>
@@ -36,17 +38,101 @@
                 <a class="navbar__nav__link" href="#">human spaceflight</a>
                 <a class="navbar__nav__link" href="#">rideshare</a>
                 <a class="navbar__nav__link" href="#">shop</a>
-            </div>
+            </nav>
         </div>
 
         <div class="content">
             <h2 class="content__subheading">upcoming launch</h2>
             <h1 class="content__heading">crew-5 mission</h1>
+            <p class="content__caption">SpaceX designs, manufactures and launches advanced rockets and spacecraft.</p>
             <button class="content__cta">watch</button>
+        </div>
+
+        <div class="iconArrowDown">
+            <i class="iconArrowDown__image fa-solid fa-chevron-down"></i>
         </div>
     </header>
 
     <section style="height:100vh ;"></section>
+
+    <footer class="Footer">
+
+        <div class="topBar">
+            <div class="topBar__logo">
+                <img class="topBar__logo__image" src="./img/logo_2.png" alt="logo">
+            </div>
+
+            <div class="topBar__arrowUpIcon" data-arrowUpIcon>
+                <i class="fa-solid fa-arrow-up topBar__arrowUpIcon__icon"></i>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="content__navigation">
+                <h2 class="content__navigation__heading">navigation</h2>
+
+                <div class="content__navigation__links">
+                    <a class="content__navigation__links__link" href="#">link1</a>
+                    <a class="content__navigation__links__link" href="#">link2</a>
+                    <a class="content__navigation__links__link" href="#">link3</a>
+                    <a class="content__navigation__links__link" href="#">link4</a>
+                </div>
+            </div>
+
+            <div class="content__contact">
+                <h2 class="content__contact__heading">contact</h2>
+
+                <div class="content__contact__info">
+                    <div class="content__contact__info__item">
+                        <div class="content__contact__info__item__icon">
+                            <i class="content__contact__info__item__icon__image fa-solid fa-location-dot"></i>
+                        </div>
+                        <p class="content__contact__info__item__text">Hawthorne, CA 90250, US</p>
+                    </div>
+                    <div class="content__contact__info__item">
+                        <div class="content__contact__info__item__icon">
+                            <i class="content__contact__info__item__icon__image fa-solid fa-mobile-screen"></i>
+                        </div>
+                        <p class="content__contact__info__item__text">+1 310-363-6000</p>
+                    </div>
+                    <div class="content__contact__info__item">
+                        <div class="content__contact__info__item__icon">
+                            <i class="content__contact__info__item__icon__image fa-solid fa-envelope"></i>
+                        </div>
+                        <p class="content__contact__info__item__text">spacex@space.com</p>
+                    </div>
+                </div>
+
+                <div class="content__contact__socials">
+                    <div class="content__contact__socials__icon">
+                        <i class="content__contact__socials__icon__image fa-brands fa-instagram"></i>
+                    </div>
+                    <div class="content__contact__socials__icon">
+                        <i class="content__contact__socials__icon__image fa-brands fa-facebook"></i>
+                    </div>
+                    <div class="content__contact__socials__icon">
+                        <i class="content__contact__socials__icon__image fa-brands fa-linkedin"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content__newsletter">
+                <h2 class="content__newsletter__heading">subscribe newsletter</h2>
+                <p class="content__newsletter__caption">Subscribe to receive company updates and news.</p>
+
+                <form class="content__newsletter__form">
+                    <input type="text" class="content__newsletter__form__input">
+                    <button class="content__newsletter__form__button">submit</button>
+                    <p class="content__newsletter__form__error">Please enter correct email adress.</p>
+                </form>
+            </div>
+        </div>
+
+        <div class="bottomBar">
+            <p class="bottomBar__text">Copyright 2022 © SpaceX. All rights reserved.</p>
+        </div>
+
+    </footer>
 
 </body>
 

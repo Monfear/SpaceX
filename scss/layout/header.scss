@@ -127,14 +127,15 @@
     }
 
     & .content {
-        @include container;
+        padding: 1rem;
 
-        width: 70%;
-        background-color: rgba(255, 255, 255, 0.1);
+        width: 80%;
+        // background-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(0, 0, 0, 0.5);
         border-radius: 0 0.5rem 0.5rem 0;
 
         position: absolute;
-        bottom: 11rem;
+        bottom: 10rem;
 
         animation: showContent 1s ease-out;
 
@@ -146,33 +147,42 @@
         &__heading {
             text-transform: uppercase;
             font-size: $heading-big;
+            color: $color-grey-light;
+        }
+
+        &__caption {
+            font-size: $text-big;
         }
 
         &__cta {
-            position: relative;
-
-            color: $color-white;
-            background-color: transparent;
-            border: 2px solid $color-white;
-
-            width: 160px;
-            height: 50px;
+            @include button;
             margin-top: 1rem;
-
-            text-transform: uppercase;
-            font-weight: bold;
-
-            overflow: hidden;
-            cursor: pointer;
-            transition: all 0.5s;
-
-            z-index: 0;
-
-            &:active {
-                background-color: $color-white;
-                color: $color-black;
-            }
         }
+    }
+
+    & .iconArrowDown {
+        position: absolute;
+        bottom: 3rem;
+
+        left: 50%;
+        transform: translateX(-50%);
+        animation: moveArrow 2s linear infinite;
+
+        &__image {
+            font-size: $heading-medium;
+        }
+    }
+}
+
+@keyframes moveArrow {
+    0% {
+        transform: translate(-50%, 1rem);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, 0);
+        opacity: 0;
     }
 }
 
@@ -195,7 +205,7 @@
             width: 55%;
 
             &__cta {
-                margin-top: 1.5rem;
+                margin-top: 2rem;
             }
         }
     }
@@ -207,10 +217,6 @@
             bottom: 20rem;
             width: 60%;
             padding: 1.5rem;
-
-            &__cta {
-                margin-top: 2rem;
-            }
 
             &__heading {
                 font-size: $heading-large;
@@ -289,37 +295,24 @@
             &__heading {
                 font-size: $heading-xlarge;
             }
+        }
 
-            &__cta {
-                width: 200px;
-                height: 60px;
-                font-size: $text-medium;
+        & .iconArrowDown {
+            cursor: pointer;
+            bottom: 4rem;
 
-                &:hover {
-                    color: $color-black;
-
-                    &::before {
-                        transform: translate(-50%, -50%) skew(45deg) scaleX(1);
-                    }
-                }
-
-                &::before {
-                    content: '';
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-
-                    width: 140%;
-                    height: 140%;
-
-                    background-color: $color-white;
-
-                    transform: translate(-50%, -50%) skew(45deg) scaleX(0);
-                    transition: all 0.5s;
-
-                    z-index: -1;
-                }
+            &__image {
+                font-size: $heading-big;
             }
+        }
+    }
+}
+
+@media only screen and (min-width: $mq-xlarge) {
+    .Header {
+        & .content {
+            bottom: 20rem;
+            padding: 2rem;
         }
     }
 }

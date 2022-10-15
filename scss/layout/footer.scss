@@ -2,7 +2,6 @@
 @use './../common/variables.scss' as *;
 
 .Footer {
-    height: 50vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('./../img/dragon.webp');
     background-size: cover;
     background-position: right center;
@@ -210,6 +209,49 @@
 
         &__text {
             text-align: center;
+        }
+    }
+}
+
+@media screen and (min-width: $mq-big) {
+    .Footer {
+        & .content {
+            grid-template-columns: repeat(3, 1fr);
+
+            padding-bottom: $padding-section;
+
+            &__contact {
+                &__info {
+                    &__item {
+                        &__text {
+                            font-size: $text-medium;
+                        }
+                    }
+                }
+
+                &__socials {
+                    &__icon {
+                        transition: all 0.2s ease-in;
+
+                        &:hover {
+                            background-color: $color-primary;
+                            transform: translateY(-0.1rem);
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+
+            &__newsletter {
+                grid-column: 3/4;
+
+                &__form {
+                    &__button {
+                        width: auto;
+                        height: auto;
+                    }
+                }
+            }
         }
     }
 }

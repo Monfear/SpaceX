@@ -8,6 +8,8 @@
     background-position: -110px center;
     color: $color-white;
 
+    position: relative;
+
     & .navbar {
         @include container;
 
@@ -30,8 +32,12 @@
         &__logo {
             width: 240px;
 
+            display: flex;
+            align-items: center;
+
             &__image {
                 width: 100%;
+                height: 100%;
             }
         }
 
@@ -120,7 +126,7 @@
                 transition: all 0.2s ease;
 
                 &:active {
-                    color: $color-grey-light;
+                    color: $color-primary-xlight;
                 }
             }
         }
@@ -129,13 +135,14 @@
     & .content {
         padding: 1rem;
 
-        width: 80%;
-        // background-color: rgba(255, 255, 255, 0.1);
-        background-color: rgba(0, 0, 0, 0.5);
+        width: 90%;
+        background-color: rgba(0, 0, 0, 0.3);
         border-radius: 0 0.5rem 0.5rem 0;
 
         position: absolute;
-        bottom: 10rem;
+        top: 16rem;
+
+        box-shadow: 0 0 7px 0 $color-white;
 
         animation: showContent 1s ease-out;
 
@@ -147,7 +154,8 @@
         &__heading {
             text-transform: uppercase;
             font-size: $heading-big;
-            color: $color-grey-light;
+            color: $color-primary-light;
+            text-shadow: 0 0 10px $color-primary;
         }
 
         &__caption {
@@ -188,21 +196,30 @@
 
 @keyframes showContent {
     0% {
-        transform: translateX(-100%);
+        transform: translateX(-100%) translateY(-50%);
     }
 
     100% {
-        transform: translateX(0);
+        transform: translateX(0) translateY(-50%);
+    }
+}
+
+@media only screen and (max-height: $mq-xsmall-landscape) {
+    .Header {
+        & .content {
+            top: 13rem;
+        }
     }
 }
 
 @media only screen and (max-height: $mq-small) and (orientation: landscape) {
     .Header {
         background-position: center bottom;
+        height: 100vh;
 
         & .content {
-            bottom: 4rem;
-            width: 55%;
+            width: 70%;
+            top: 3.5rem;
 
             &__cta {
                 margin-top: 2rem;
@@ -214,12 +231,17 @@
 @media only screen and (min-width: $mq-medium) {
     .Header {
         & .content {
-            bottom: 20rem;
             width: 60%;
             padding: 1.5rem;
 
+            top: 17rem;
+
             &__heading {
                 font-size: $heading-large;
+            }
+
+            &__cta {
+                margin-top: 2rem;
             }
         }
     }
@@ -234,6 +256,8 @@
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
+
+            padding-top: 1rem;
 
             &__hamburger {
                 display: none;
@@ -256,7 +280,7 @@
                     position: relative;
 
                     &:hover {
-                        color: $color-grey-light;
+                        color: $color-primary-xlight;
                     }
 
                     &::after {
@@ -265,7 +289,7 @@
                         left: 0;
                         bottom: 0;
 
-                        background-color: $color-white;
+                        background-color: $color-primary;
 
                         width: 100%;
                         height: 2px;
@@ -277,7 +301,6 @@
 
                     &:hover::after {
                         transform: scaleX(1);
-                        background-color: $color-grey-light;
                         transform-origin: left center;
                     }
                 }
@@ -285,8 +308,11 @@
         }
 
         & .content {
-            bottom: 12rem;
-            width: 40%;
+            width: 45%;
+            top: 50%;
+            transform: translateY(-50%);
+
+            padding: 2rem;
 
             &__subheading {
                 font-size: $text-large;
@@ -295,11 +321,19 @@
             &__heading {
                 font-size: $heading-xlarge;
             }
+
+            &__cta {
+                margin-top: 3rem;
+            }
         }
 
         & .iconArrowDown {
             cursor: pointer;
             bottom: 4rem;
+
+            &:hover {
+                animation-play-state: paused;
+            }
 
             &__image {
                 font-size: $heading-big;
@@ -311,8 +345,6 @@
 @media only screen and (min-width: $mq-xlarge) {
     .Header {
         & .content {
-            bottom: 20rem;
-            padding: 2rem;
         }
     }
 }

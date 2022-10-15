@@ -3,6 +3,8 @@ $color-black: hsl(0, 0%, 0%);
 $color-grey-light: hsl(210, 7%, 58%);
 $color-grey-dark: hsl(0, 0%, 15%);
 
+$color-primary-xlight: #bee3ff;
+$color-primary-light: #7ebae6;
 $color-primary: hsl(205, 100%, 28%);
 $color-primary-dark: hsl(205, 100%, 17%);
 
@@ -22,5 +24,7 @@ $mq-large: 1440px;
 $mq-big: 1024px;
 $mq-medium: 768px;
 $mq-small: 576px;
+
+$mq-xsmall-landscape: 640px;
 
 $padding-section: 2rem;

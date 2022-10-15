@@ -9,8 +9,6 @@
     color: $color-white;
 
     & .topBar {
-        border: 1px solid red;
-
         @include container;
 
         display: flex;
@@ -18,6 +16,9 @@
         align-items: center;
 
         &__logo {
+            display: flex;
+            align-items: center;
+
             &__image {
                 width: 220px;
             }
@@ -46,8 +47,6 @@
     }
 
     .content {
-        border: 1px solid green;
-
         @include container;
 
         display: grid;
@@ -82,6 +81,7 @@
 
             &__links {
                 display: flex;
+                align-items: flex-start;
                 flex-direction: column;
                 gap: 0.5rem;
 
@@ -215,6 +215,8 @@
 
 @media screen and (min-width: $mq-big) {
     .Footer {
+        padding-top: 1rem;
+
         & .content {
             grid-template-columns: repeat(3, 1fr);
 

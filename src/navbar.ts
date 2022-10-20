@@ -9,13 +9,15 @@ export class Navbar extends Common {
 
     private backdrop: Backdrop = new Backdrop();
 
-    private isMenuOpen: boolean = false;
+    private isMenuOpen: boolean | undefined = undefined;
 
     constructor() {
         super();
 
         this.setupEventsListeners();
         this.adjustMediaQueries();
+
+        this.watchMenuScroll();
     }
 
     private setupEventsListeners(): void {
@@ -23,14 +25,35 @@ export class Navbar extends Common {
         window.addEventListener('resize', this.adjustMediaQueries.bind(this));
 
         this.hamburgerBtn.addEventListener('click', this.toggleMenu.bind(this));
-        this.backdrop.backdropEl.addEventListener('click', this.toggleMenu.bind(this));
+
+        this.backdrop.backdropEl.addEventListener('click', () => {
+            this.isMenuOpen = false;
+
+            this.backdrop.closeBackdrop();
+
+            this.nav.classList.add('inactive');
+            this.hamburgerBtn.classList.remove('active');
+        });
     }
 
     private adjustMediaQueries(): void {
         if (this.isMobileView) {
+            this.isMenuOpen = false;
+
+            this.hamburgerBtn.classList.remove('active');
             this.nav.classList.add('inactive');
+
+            if (!this.backdrop.backdropEl.classList.contains('hide')) {
+                this.backdrop.closeBackdrop();
+            }
         } else {
+            this.isMenuOpen = true;
+
             this.nav.classList.remove('inactive');
+
+            if (!this.backdrop.backdropEl.classList.contains('hide')) {
+                this.backdrop.closeBackdrop();
+            }
         }
     }
 
@@ -44,36 +67,32 @@ export class Navbar extends Common {
         }
     }
 
-    private openMenu(): void {
-        this.hamburgerBtn.classList.add('active');
-        this.nav.classList.remove('inactive');
-    }
-
-    private closeMenu(): void {
-        this.hamburgerBtn.classList.remove('active');
-        this.nav.classList.add('inactive');
-    }
-
     private toggleMenu(): void {
         if (!this.isMenuOpen) {
             this.isMenuOpen = true;
 
-            this.openMenu();
+            this.hamburgerBtn.classList.add('active');
+            this.nav.classList.remove('inactive');
+
             this.showLinks();
+
             this.backdrop.openBackdrop();
         } else {
             this.isMenuOpen = false;
 
-            this.closeMenu();
-            this.hideLinks();
-            this.backdrop.closeBackdrop();
+            this.hamburgerBtn.classList.remove('active');
+            this.nav.classList.add('inactive');
+
+            if (!this.backdrop.backdropEl.classList.contains('hide')) {
+                this.backdrop.closeBackdrop();
+            }
         }
     }
 
     private showLinks(): void {
-        this.navLinks.forEach((link: HTMLElement, idx: number, arr: HTMLElement[]): void => {
-            link.style.opacity = '0';
+        this.hideLinks();
 
+        this.navLinks.forEach((link: HTMLElement, idx: number, arr: HTMLElement[]): void => {
             link.animate(
                 [
                     {
@@ -96,8 +115,6 @@ export class Navbar extends Common {
 
     private hideLinks(): void {
         this.navLinks.forEach((link: HTMLElement, idx: number, arr: HTMLElement[]): void => {
-            link.style.opacity = '1';
-
             link.animate(
                 [
                     {
@@ -108,7 +125,7 @@ export class Navbar extends Common {
                     },
                 ],
                 {
-                    duration: 50,
+                    duration: 0,
                     fill: 'forwards',
                 }
             );

@@ -15,19 +15,16 @@ export class TextObserver {
         },
     ];
 
-    constructor(private textElement: HTMLParagraphElement) {
-        this.hideText(this.textElement);
+    constructor(private element: HTMLParagraphElement) {
+        this.hideText(this.element);
     }
 
     public setTextObserver(): void {
-        const textObserver = new IntersectionObserver(
-            (entries, observer) => {
-                entries.forEach((entry) => {
-                    console.log(entry);
+        const textObserver: IntersectionObserver = new IntersectionObserver(
+            (entries: IntersectionObserverEntry[], observer: IntersectionObserver): void => {
+                entries.forEach((entry: IntersectionObserverEntry) => {
                     if (entry.isIntersecting) {
-                        console.log('intersecting');
-
-                        this.showText(this.textElement);
+                        this.showText(this.element);
 
                         observer.unobserve(entry.target);
                     }
@@ -40,7 +37,7 @@ export class TextObserver {
             }
         );
 
-        textObserver.observe(this.textElement);
+        textObserver.observe(this.element);
     }
 
     private showText(element: HTMLParagraphElement): void {

@@ -1,5 +1,5 @@
-import { Backdrop } from './backdrop';
-import { Common } from './common';
+import { Backdrop } from '../components/backdrop';
+import { Common } from '../helpers/common';
 
 export class Navbar extends Common {
     private hamburgerBtn: HTMLButtonElement = document.querySelector('[data-hamburger]') as HTMLButtonElement;
@@ -53,6 +53,10 @@ export class Navbar extends Common {
 
             if (!this.backdrop.backdropEl.classList.contains('hide')) {
                 this.backdrop.closeBackdrop();
+            }
+
+            if (this.navbar.classList.contains('scrolled')) {
+                this.navbar.classList.remove('scrolled');
             }
         }
     }

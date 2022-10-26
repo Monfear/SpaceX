@@ -220,7 +220,7 @@
         & .content {
             grid-template-columns: repeat(3, 1fr);
 
-            padding-bottom: $padding-section;
+            padding-bottom: $spacing-section-2;
 
             &__contact {
                 &__info {

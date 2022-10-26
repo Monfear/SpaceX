@@ -16,7 +16,7 @@
     }
 }
 
-.HEADING {
+@mixin heading {
     display: inline-block;
 
     text-transform: uppercase;
@@ -46,6 +46,15 @@
     &::after {
         bottom: 0;
         right: 0;
+    }
+
+    @media screen and (min-width: $mq-medium) {
+        margin-bottom: 0.6rem;
+    }
+
+    @media screen and (min-width: $mq-big) {
+        margin: 1rem 0 1.5rem;
+        font-size: $heading-big;
     }
 }
 

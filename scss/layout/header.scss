@@ -214,7 +214,7 @@
     }
 }
 
-@media only screen and (max-height: $mq-xsmall-landscape) {
+@media only screen and (max-height: $mq-xsmall-height) {
     .Header {
         & .content {
             top: 13rem;

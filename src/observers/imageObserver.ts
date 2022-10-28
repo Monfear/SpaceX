@@ -1,6 +1,12 @@
 export class PictureObserver {
-    constructor(private element: HTMLDivElement) {
-        this.setStartingStyles();
+    private pictureElements: HTMLDivElement[] = [document.querySelector('[data-aboutUs-picture]') as HTMLDivElement];
+
+    constructor() {
+        this.pictureElements.forEach((element: HTMLDivElement) => {
+            this.setStartingStyles(element);
+        });
+
+        this.setPictureObserver();
     }
 
     public setPictureObserver(): void {
@@ -8,7 +14,7 @@ export class PictureObserver {
             (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
                 entries.forEach((entry: IntersectionObserverEntry) => {
                     if (entry.isIntersecting) {
-                        this.showPicture();
+                        this.showPicture(entry.target);
 
                         observer.unobserve(entry.target);
                     }
@@ -21,17 +27,21 @@ export class PictureObserver {
             }
         );
 
-        pictureObserver.observe(this.element);
+        this.pictureElements.forEach((element: HTMLDivElement) => {
+            pictureObserver.observe(element);
+        });
     }
 
-    private setStartingStyles(): void {
-        this.element.style.scale = '0';
+    private setStartingStyles(element: HTMLDivElement): void {
+        element.style.scale = '0';
     }
 
-    private showPicture(): void {
-        this.element.style.scale = '1';
+    private showPicture(element: IntersectionObserverEntry['target']): void {
+        if (element instanceof HTMLDivElement) {
+            element.style.scale = '1';
+        }
 
-        this.element.animate(
+        element.animate(
             [
                 {
                     transform: 'scale(0) rotateZ(0)',

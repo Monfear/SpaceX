@@ -2,6 +2,7 @@
 @use './../common/variables.scss' as *;
 
 .About-us {
+    padding-top: $spacing-section-1;
     padding-bottom: $spacing-section-2;
 
     & .heading {

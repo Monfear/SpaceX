@@ -1,7 +1,7 @@
-import { StatsObserver } from './observers/commonObserver';
+import { StatsObserver } from './observers/statsObserver';
 import { PictureObserver } from './observers/imageObserver';
 import { TextObserver } from './observers/textObserver';
-import { AboutUs } from './sections/aboutUs';
+
 import { Footer } from './sections/footer';
 import { Navbar } from './sections/navbar';
 
@@ -12,7 +12,6 @@ export class App {
         new StatsObserver();
 
         new Navbar();
-        new AboutUs();
 
         new Footer();
     }

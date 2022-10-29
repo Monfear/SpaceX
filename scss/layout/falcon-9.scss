@@ -2,12 +2,13 @@
 @use './../common/variables.scss' as *;
 
 .Falcon-9 {
-    height: 100vh;
     background-image: url('./../img/falcon-9-2.jpg');
     background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('./../img/falcon-9-2.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
+    padding-top: $spacing-section-1;
+    padding-bottom: $spacing-section-2;
 
     & .heading {
         @include heading;
@@ -49,5 +50,39 @@
         color: $color-white;
         margin-top: 3rem;
         text-shadow: 1.5px 0px $color-grey-dark;
+    }
+}
+
+@media only screen and (max-height: $mq-small) and (orientation: landscape) {
+    .Falcon-9 {
+        & .stats {
+            width: 90%;
+            margin-inline: auto;
+            justify-content: space-around;
+        }
+    }
+}
+
+@media screen and (min-width: $mq-medium) {
+    .Falcon-9 {
+        & .stats {
+            width: 90%;
+            margin-inline: auto;
+            justify-content: space-around;
+        }
+    }
+}
+
+@media screen and (min-width: $mq-medium) {
+    .Falcon-9 {
+        & .stats {
+            width: 50%;
+        }
+
+        & .description {
+            width: 90%;
+            text-align: center;
+            margin-inline: auto;
+        }
     }
 }

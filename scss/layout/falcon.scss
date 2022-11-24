@@ -1,7 +1,7 @@
 @use './../common/mixins.scss' as *;
 @use './../common/variables.scss' as *;
 
-.Falcon-9 {
+.Falcon {
     background-image: url('./../img/falcon-9-2.jpg');
     background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('./../img/falcon-9-2.jpg');
     background-attachment: fixed;
@@ -40,8 +40,7 @@
                 font-size: $heading-big;
             }
 
-            &__text {
-            }
+            &__text {}
         }
     }
 
@@ -52,12 +51,11 @@
         text-shadow: 1.5px 0px $color-grey-dark;
     }
 
-    .slider {
-    }
+    .slider {}
 }
 
 @media only screen and (max-height: $mq-small) and (orientation: landscape) {
-    .Falcon-9 {
+    .Falcon {
         & .stats {
             width: 90%;
             margin-inline: auto;
@@ -67,7 +65,7 @@
 }
 
 @media screen and (min-width: $mq-medium) {
-    .Falcon-9 {
+    .Falcon {
         & .stats {
             width: 90%;
             margin-inline: auto;
@@ -76,14 +74,17 @@
     }
 }
 
-@media screen and (min-width: $mq-medium) {
-    .Falcon-9 {
+@media screen and (min-width: $mq-big) {
+    .Falcon {
+        padding-bottom: $spacing-section-2 * 3;
+
         & .stats {
-            width: 50%;
+            width: 60%;
         }
 
         & .description {
-            width: 90%;
+            margin-top: 5rem;
+            width: 85%;
             text-align: center;
             margin-inline: auto;
         }

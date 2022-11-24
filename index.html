@@ -18,29 +18,33 @@
 <body>
     <div class="Backdrop hide" data-backdrop></div>
 
-    <header class="Header">
-        <div class="navbar" data-navbar>
-            <div class="navbar__logo">
-                <img class="navbar__logo__image" src="./img/logo.png" alt="logo">
+    <div class="Navbar" data-navbar>
+        <div class="CONTAINER">
+            <div class="wrapper">
+                <div class="logo">
+                    <img class="logo__image" src="./img/logo.png" alt="logo">
+                </div>
+
+                <button class="hamburger" data-hamburger>
+                    <span class="hamburger__line"></span>
+                    <span class="hamburger__line"></span>
+                    <span class="hamburger__line"></span>
+                </button>
+
+                <nav class="nav" data-nav>
+                    <a class="nav__link" href="./pages/falcon9.html">falcon 9</a>
+                    <a class="nav__link" href="./pages/falcon-heavy.html">falcon heavy</a>
+                    <a class="nav__link" href="./pages/dragon.html">dragon</a>
+                    <a class="nav__link" href="#">starship</a>
+                    <a class="nav__link" href="#">human spaceflight</a>
+                    <a class="nav__link" href="#">rideshare</a>
+                    <a class="nav__link" href="#">shop</a>
+                </nav>
             </div>
-
-            <button class="navbar__hamburger" data-hamburger>
-                <span class="navbar__hamburger__line"></span>
-                <span class="navbar__hamburger__line"></span>
-                <span class="navbar__hamburger__line"></span>
-            </button>
-
-            <nav class="navbar__nav" data-nav>
-                <a class="navbar__nav__link" href="./pages/falcon9.html">falcon 9</a>
-                <a class="navbar__nav__link" href="./pages/falcon-heavy.html">falcon heavy</a>
-                <a class="navbar__nav__link" href="./pages/dragon.html">dragon</a>
-                <a class="navbar__nav__link" href="#">starship</a>
-                <a class="navbar__nav__link" href="#">human spaceflight</a>
-                <a class="navbar__nav__link" href="#">rideshare</a>
-                <a class="navbar__nav__link" href="#">shop</a>
-            </nav>
         </div>
+    </div>
 
+    <header class="Header">
         <div class="content">
             <h2 class="content__subheading">upcoming launch</h2>
             <h1 class="content__heading">crew-5 mission</h1>
@@ -53,7 +57,6 @@
         </div>
     </header>
 
-    <!-- <section style="height: 100vh;"></section> -->
 
     <section class="About-us" data-aboutUs>
         <div class="CONTAINER">
@@ -80,7 +83,7 @@
         </div>
     </section>
 
-    <section class="Falcon-9">
+    <section class="Falcon">
         <div class="CONTAINER">
             <h1 class="heading">falcon 9</h1>
             <h2 class="subheading">first orbital class rocket capable of reflight</h2>
@@ -101,133 +104,274 @@
             </div>
 
             <p class="description" data-falcon9-description>
-                Falcon 9 is a reusable, two-stage rocket designed and manufactured by SpaceX for the reliable and safe
-                transport of people and payloads into Earth orbit and beyond. Falcon 9 is the world’s first orbital
-                class reusable rocket. Reusability allows SpaceX to refly the most expensive parts of the rocket, which
-                in turn drives down the cost of space access.
-
+                Falcon 9 is a reusable, two-stage rocket designed and manufactured by SpaceX for the reliable
+                and safe transport of people and payloads into Earth orbit and beyond. Falcon 9 is the world’s
+                first orbital class reusable rocket. Reusability allows SpaceX to refly the most expensive
+                parts of the rocket, whichin turn drives down the cost of space access.
             </p>
         </div>
     </section>
 
-    <section class="Falcon-9-2">
+    <section class="Falcon-2">
         <div class="slider">
 
+            <div class="slider__buttons">
+                <span class="slider__buttons__button" data-falcon-2-slider-btnPrev>
+                    <i class="slider__buttons__button__icon fa-solid fa-chevron-left"></i>
+                </span>
+                <span class="slider__buttons__button" data-falcon-2-slider-btnNext>
+                    <i class="slider__buttons__button__icon fa-solid fa-chevron-right"></i>
+                </span>
+            </div>
 
-            <div class="slider__slide">
-                <div class="slider__slide__picture">
-                    <!-- <img src="./img//falcon-9-overview.png" alt="" class="slider__slide__picture__img"> -->
-                </div>
+            <div class="slider__slides" data-falvon-2-slider-slides>
+                <div class="slider__slides__slide">
+                    <div class="slider__slides__slide__picture"></div>
 
-                <div class="slider__slide__content">
-                    <h1 class="slider__slide__content__heading">falcon 9</h1>
-                    <h2 class="slider__slide__content__subheading">overview</h2>
+                    <div class="CONTAINER">
+                        <div class="slider__slides__slide__content">
+                            <h1 class="slider__slides__slide__content__heading">falcon 9</h1>
+                            <h2 class="slider__slides__slide__content__subheading">overview</h2>
 
-                    <div class="slider__slide__content__info">
-                        <div class="slider__slide__content__info__item">
-                            <p class="slider__slide__content__info__item__name">height</p>
-                            <p class="slider__slide__content__info__item__value">70 m</p>
-                        </div>
-                        <div class="slider__slide__content__info__item">
-                            <p class="slider__slide__content__info__item__name">diameter</p>
-                            <p class="slider__slide__content__info__item__value">3.7 m</p>
-                        </div>
-                        <div class="slider__slide__content__info__item">
-                            <p class="slider__slide__content__info__item__name">mass</p>
-                            <p class="slider__slide__content__info__item__value">549,054 kg</p>
-                        </div>
-                        <div class="slider__slide__content__info__item">
-                            <p class="slider__slide__content__info__item__name">payload to leo</p>
-                            <p class="slider__slide__content__info__item__value">22,800 kg</p>
-                        </div>
-                        <div class="slider__slide__content__info__item">
-                            <p class="slider__slide__content__info__item__name">payload to gto</p>
-                            <p class="slider__slide__content__info__item__value">8,300 kg</p>
+                            <div class="slider__slides__slide__content__info">
+                                <div class="slider__slides__slide__content__info__item">
+                                    <p class="slider__slides__slide__content__info__item__name">height</p>
+                                    <p class="slider__slides__slide__content__info__item__value">70 m</p>
+                                </div>
+                                <div class="slider__slides__slide__content__info__item">
+                                    <p class="slider__slides__slide__content__info__item__name">diameter</p>
+                                    <p class="slider__slides__slide__content__info__item__value">3.7 m</p>
+                                </div>
+                                <div class="slider__slides__slide__content__info__item">
+                                    <p class="slider__slides__slide__content__info__item__name">mass</p>
+                                    <p class="slider__slides__slide__content__info__item__value">549,054 kg</p>
+                                </div>
+                                <div class="slider__slides__slide__content__info__item">
+                                    <p class="slider__slides__slide__content__info__item__name">payload to leo</p>
+                                    <p class="slider__slides__slide__content__info__item__value">22,800 kg</p>
+                                </div>
+                                <div class="slider__slides__slide__content__info__item">
+                                    <p class="slider__slides__slide__content__info__item__name">payload to gto</p>
+                                    <p class="slider__slides__slide__content__info__item__value">8,300 kg</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
                 </div>
+
+                <div class="slider__slides__slide">
+                    <div class="slider__slides__slide__picture" data-slider-firstStage-img-stages></div>
+
+                    <div class="CONTAINER">
+                        <div class="slider__slides__slide__content">
+                            <h1 class="slider__slides__slide__content__heading">falcon 9</h1>
+                            <h2 class="slider__slides__slide__content__subheading">first stage</h2>
+
+                            <nav class="slider__slides__slide__content__nav">
+                                <h3 class='slider__slides__slide__content__nav__link' data-slider-link-stages>outline
+                                </h3>
+                                <h3 class='slider__slides__slide__content__nav__link' data-slider-link-stages>engines
+                                </h3>
+                                <h3 class='slider__slides__slide__content__nav__link' data-slider-link-stages>landing
+                                    legs</h3>
+                            </nav>
+
+                            <div class="slider__slides__slide__content__textContainer" data-slider-textContainer-stages>
+                                <p class='slider__slides__slide__content__textContainer__text'>
+                                    Falcon 9’s first stage incorporates nine Merlin engines and aluminum-lithium
+                                    alloy tanks containing liquid oxygen and rocket-grade kerosene (RP-1) propellant.
+                                </p>
+
+                                <p class='slider__slides__slide__content__textContainer__text'>
+                                    Falcon 9 generates more than 1.7 million pounds of thrust at sea level.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider__slides__slide">
+                    <div class="slider__slides__slide__picture"></div>
+
+                    <div class="CONTAINER">
+                        <div class="slider__slides__slide__content">
+                            <h1 class="slider__slides__slide__content__heading">falcon 9</h1>
+                            <h2 class="slider__slides__slide__content__subheading">second stage</h2>
+
+                            <div class='slider__slides__slide__content__textContainer'>
+                                <p class='slider__slides__slide__content__textContainer__text'>
+                                    The second stage, powered by a single Merlin Vacuum Engine,
+                                    delivers Falcon 9’s payload to the desired orbit. The second stage engine
+                                    ignites a few seconds after stage separation, and can be restarted multiple
+                                    times to place multiple payloads into different orbits.
+                                </p>
+                            </div>
+
+                            <div class="slider__slides__slide__content__info">
+                                <div class="slider__slides__slide__content__info__item">
+                                    <p class="slider__slides__slide__content__info__item__name">number of engines</p>
+                                    <p class="slider__slides__slide__content__info__item__value">1 vacuum</p>
+                                </div>
+                                <div class="slider__slides__slide__content__info__item">
+                                    <p class="slider__slides__slide__content__info__item__name">burn time</p>
+                                    <p class="slider__slides__slide__content__info__item__value">397 sec</p>
+                                </div>
+                                <div class="slider__slides__slide__content__info__item">
+                                    <p class="slider__slides__slide__content__info__item__name">thrust</p>
+                                    <p class="slider__slides__slide__content__info__item__value">981 kN</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider__slides__slide">
+                    <div class="slider__slides__slide__picture"></div>
+
+                    <div class="CONTAINER">
+                        <div class="slider__slides__slide__content">
+                            <h1 class="slider__slides__slide__content__heading">falcon 9</h1>
+                            <h2 class="slider__slides__slide__content__subheading">interstage</h2>
+
+                            <div class='slider__slides__slide__content__textContainer'>
+                                <p class='slider__slides__slide__content__textContainer__text'>
+                                    The interstage is a composite structure that connects the first and second
+                                    stages, and houses the pneumatic pushers that allow the first and second stage
+                                    to separate during flight.
+                                </p>
+
+                                <p class='slider__slides__slide__content__textContainer__text'>
+                                    Falcon 9 is equipped with four hypersonic grid fins positioned
+                                    at the base of the interstage. They orient the rocket during reentry
+                                    by moving the center of pressure.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider__slides__slide">
+                    <div class="slider__slides__slide__picture" data-slider-img-payload></div>
+
+                    <div class="CONTAINER">
+                        <div class="slider__slides__slide__content">
+                            <h1 class="slider__slides__slide__content__heading">falcon 9</h1>
+                            <h2 class="slider__slides__slide__content__subheading">payload</h2>
+
+                            <nav class="slider__slides__slide__content__nav">
+                                <h3 class='slider__slides__slide__content__nav__link' data-slider-link-payload>fairing
+                                </h3>
+                                <h3 class='slider__slides__slide__content__nav__link' data-slider-link-payload>dragon
+                                </h3>
+                            </nav>
+
+                            <div class='slider__slides__slide__content__textContainer'
+                                data-slider-textContainer-payload>
+                                <p class='slider__slides__slide__content__textContainer__text'>
+                                    Made of a carbon composite material, the fairing protects satellites
+                                    on their way to orbit. The fairing is jettisoned approximately 3 minutes
+                                    into flight, and SpaceX continues to recover fairings
+                                    for reuse on future missions.
+                                </p>
+                            </div>
+
+                            <div class="slider__slides__slide__content__info" data-slider-info-payload>
+                                <div class="slider__slides__slide__content__info__item">
+                                    <p class="slider__slides__slide__content__info__item__name">height</p>
+                                    <p class="slider__slides__slide__content__info__item__value">13.1 m</p>
+                                </div>
+                                <div class="slider__slides__slide__content__info__item">
+                                    <p class="slider__slides__slide__content__info__item__name">diameter</p>
+                                    <p class="slider__slides__slide__content__info__item__value">5.2</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-
-
-
     <footer class="Footer">
+        <div class="CONTAINER">
 
-        <div class="topBar">
-            <div class="topBar__logo">
-                <img class="topBar__logo__image" src="./img/logo_2.png" alt="logo">
+            <div class="topBar">
+                <div class="topBar__logo">
+                    <img class="topBar__logo__image" src="./img/logo_2.png" alt="logo">
+                </div>
+
+                <div class="topBar__arrowUpIcon" data-arrowUpIcon>
+                    <i class="fa-solid fa-arrow-up topBar__arrowUpIcon__icon"></i>
+                </div>
             </div>
 
-            <div class="topBar__arrowUpIcon" data-arrowUpIcon>
-                <i class="fa-solid fa-arrow-up topBar__arrowUpIcon__icon"></i>
+            <div class="content">
+
+                <div class="content__navigation">
+                    <h2 class="content__navigation__heading">navigation</h2>
+
+                    <div class="content__navigation__links">
+                        <a class="content__navigation__links__link" href="#">link1</a>
+                        <a class="content__navigation__links__link" href="#">link2</a>
+                        <a class="content__navigation__links__link" href="#">link3</a>
+                        <a class="content__navigation__links__link" href="#">link4</a>
+                    </div>
+                </div>
+
+                <div class="content__contact">
+                    <h2 class="content__contact__heading">contact</h2>
+
+                    <div class="content__contact__info">
+                        <div class="content__contact__info__item">
+                            <div class="content__contact__info__item__icon">
+                                <i class="content__contact__info__item__icon__image fa-solid fa-location-dot"></i>
+                            </div>
+                            <p class="content__contact__info__item__text">Hawthorne, CA 90250, US</p>
+                        </div>
+                        <div class="content__contact__info__item">
+                            <div class="content__contact__info__item__icon">
+                                <i class="content__contact__info__item__icon__image fa-solid fa-mobile-screen"></i>
+                            </div>
+                            <p class="content__contact__info__item__text">+1 310-363-6000</p>
+                        </div>
+                        <div class="content__contact__info__item">
+                            <div class="content__contact__info__item__icon">
+                                <i class="content__contact__info__item__icon__image fa-solid fa-envelope"></i>
+                            </div>
+                            <p class="content__contact__info__item__text">spacex@space.com</p>
+                        </div>
+                    </div>
+
+                    <div class="content__contact__socials">
+                        <div class="content__contact__socials__icon">
+                            <i class="content__contact__socials__icon__image fa-brands fa-instagram"></i>
+                        </div>
+                        <div class="content__contact__socials__icon">
+                            <i class="content__contact__socials__icon__image fa-brands fa-facebook"></i>
+                        </div>
+                        <div class="content__contact__socials__icon">
+                            <i class="content__contact__socials__icon__image fa-brands fa-linkedin"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content__newsletter">
+                    <h2 class="content__newsletter__heading">subscribe newsletter</h2>
+                    <p class="content__newsletter__caption">Subscribe to receive company updates and news.</p>
+
+                    <form class="content__newsletter__form" data-footerForm>
+                        <input type="text" class="content__newsletter__form__input" data-footerInput>
+                        <button class="content__newsletter__form__button">submit</button>
+                        <p class="content__newsletter__form__message" data-formMessage>Please enter correct email
+                            adress.
+                        </p>
+                    </form>
+                </div>
             </div>
+
         </div>
-
-        <div class="content">
-            <div class="content__navigation">
-                <h2 class="content__navigation__heading">navigation</h2>
-
-                <div class="content__navigation__links">
-                    <a class="content__navigation__links__link" href="#">link1</a>
-                    <a class="content__navigation__links__link" href="#">link2</a>
-                    <a class="content__navigation__links__link" href="#">link3</a>
-                    <a class="content__navigation__links__link" href="#">link4</a>
-                </div>
-            </div>
-
-            <div class="content__contact">
-                <h2 class="content__contact__heading">contact</h2>
-
-                <div class="content__contact__info">
-                    <div class="content__contact__info__item">
-                        <div class="content__contact__info__item__icon">
-                            <i class="content__contact__info__item__icon__image fa-solid fa-location-dot"></i>
-                        </div>
-                        <p class="content__contact__info__item__text">Hawthorne, CA 90250, US</p>
-                    </div>
-                    <div class="content__contact__info__item">
-                        <div class="content__contact__info__item__icon">
-                            <i class="content__contact__info__item__icon__image fa-solid fa-mobile-screen"></i>
-                        </div>
-                        <p class="content__contact__info__item__text">+1 310-363-6000</p>
-                    </div>
-                    <div class="content__contact__info__item">
-                        <div class="content__contact__info__item__icon">
-                            <i class="content__contact__info__item__icon__image fa-solid fa-envelope"></i>
-                        </div>
-                        <p class="content__contact__info__item__text">spacex@space.com</p>
-                    </div>
-                </div>
-
-                <div class="content__contact__socials">
-                    <div class="content__contact__socials__icon">
-                        <i class="content__contact__socials__icon__image fa-brands fa-instagram"></i>
-                    </div>
-                    <div class="content__contact__socials__icon">
-                        <i class="content__contact__socials__icon__image fa-brands fa-facebook"></i>
-                    </div>
-                    <div class="content__contact__socials__icon">
-                        <i class="content__contact__socials__icon__image fa-brands fa-linkedin"></i>
-                    </div>
-                </div>
-            </div>
-
-            <div class="content__newsletter">
-                <h2 class="content__newsletter__heading">subscribe newsletter</h2>
-                <p class="content__newsletter__caption">Subscribe to receive company updates and news.</p>
-
-                <form class="content__newsletter__form" data-footerForm>
-                    <input type="text" class="content__newsletter__form__input" data-footerInput>
-                    <button class="content__newsletter__form__button">submit</button>
-                    <p class="content__newsletter__form__message" data-formMessage>Please enter correct email adress.
-                    </p>
-                </form>
-            </div>
-        </div>
-
         <div class="bottomBar">
             <p class="bottomBar__text">Copyright 2022 © SpaceX. All rights reserved.</p>
         </div>

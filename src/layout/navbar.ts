@@ -1,11 +1,11 @@
-import { Backdrop } from '../components/backdrop';
-import { Common } from '../helpers/common';
+import { Backdrop } from './backdrop';
+import { Common } from '../utils/common';
 
 export class Navbar extends Common {
     private hamburgerBtn: HTMLButtonElement = document.querySelector('[data-hamburger]') as HTMLButtonElement;
     private navbar: HTMLDivElement = document.querySelector('[data-navbar]') as HTMLDivElement;
     private nav: HTMLElement = document.querySelector('[data-nav]') as HTMLElement;
-    private navLinks: HTMLElement[] = Array.from(document.querySelectorAll<HTMLElement>('.navbar__nav__link'));
+    private navLinks: HTMLElement[] = Array.from(this.nav.querySelectorAll<HTMLElement>('a'));
 
     private backdrop: Backdrop = new Backdrop();
 

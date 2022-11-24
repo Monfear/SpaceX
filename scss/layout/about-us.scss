@@ -3,7 +3,7 @@
 
 .About-us {
     padding-top: $spacing-section-1;
-    padding-bottom: $spacing-section-2;
+    padding-bottom: $spacing-section-2 * 4;
 
     & .heading {
         @include heading;
@@ -57,8 +57,7 @@
                 flex-basis: 50%;
                 width: 80%;
 
-                &__image {
-                }
+                &__image {}
             }
         }
     }

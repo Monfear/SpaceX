@@ -148,11 +148,15 @@
             padding: 2rem;
 
             &__subheading {
-                font-size: $text-large;
+                font-size: $heading-small
             }
 
             &__heading {
                 font-size: $heading-xlarge;
+            }
+
+            &__caption {
+                font-size: $text-big + 0.1rem;
             }
 
             &__cta {

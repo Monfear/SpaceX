@@ -211,10 +211,21 @@
     .Footer {
         padding-top: 1rem;
 
+        & .topBar {
+            &__arrowUpIcon {
+                transition: all ease-in 0.2s;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $color-primary;
+                }
+            }
+        }
+
         & .content {
             grid-template-columns: repeat(3, 1fr);
 
-            padding-bottom: $spacing-section-2;
+            padding-bottom: 2rem;
 
             &__contact {
                 &__info {

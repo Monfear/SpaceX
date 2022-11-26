@@ -166,9 +166,9 @@
                 display: flex;
                 justify-content: space-between;
 
-                cursor: pointer;
-
                 &__button {
+                    cursor: pointer;
+
                     &:nth-child(1) {
                         margin-right: initial;
                         margin-left: 1rem;
@@ -182,7 +182,35 @@
                         font-size: $heading-medium;
                     }
 
-                    &.inactive {}
+                    &.inactive {
+                        cursor: initial;
+                    }
+                }
+            }
+
+            &__dots {
+                position: absolute;
+                bottom: 4rem;
+                left: 50%;
+                transform: translateX(-50%);
+
+                display: flex;
+                gap: 1rem;
+
+                z-index: 1;
+
+                &__dot {
+                    width: 15px;
+                    height: 15px;
+
+                    background-color: $color-grey-dark;
+                    border-radius: 50%;
+                    border: 2px solid $color-grey-light;
+                    cursor: pointer;
+
+                    &.active {
+                        background-color: $color-white;
+                    }
                 }
             }
 

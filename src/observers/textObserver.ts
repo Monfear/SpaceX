@@ -1,15 +1,22 @@
+import { Common } from "../utils/common";
+
 type Keyframes = {
     opacity: number;
     transform: string;
 }[];
 
-export class TextObserver {
-    private textElements: HTMLParagraphElement[] = [document.querySelector('[data-falcon9-description]') as HTMLParagraphElement, document.querySelector('[data-aboutUs-text]') as HTMLParagraphElement];
+export class TextObserver extends Common {
+    private textElements: HTMLParagraphElement[] =
+        [
+            this.getElementByDataset<HTMLParagraphElement>('falcon-description')!,
+            this.getElementByDataset<HTMLParagraphElement>('aboutUs-text')!,
+            this.getElementByDataset<HTMLParagraphElement>('mission-quote')!
+        ];
 
     private keyframes: Keyframes = [
         {
             opacity: 0,
-            transform: 'translateY(-20px)',
+            transform: 'translateY(20px)',
         },
         {
             opacity: 1,
@@ -18,7 +25,9 @@ export class TextObserver {
     ];
 
     constructor() {
-        this.textElements.forEach((element: HTMLParagraphElement) => {
+        super();
+
+        this.textElements.forEach((element: HTMLParagraphElement): void => {
             this.hideText(element);
         });
 
@@ -43,7 +52,7 @@ export class TextObserver {
             }
         );
 
-        this.textElements.forEach((element) => {
+        this.textElements.forEach((element: HTMLParagraphElement): void => {
             textObserver.observe(element);
         });
     }
@@ -51,7 +60,7 @@ export class TextObserver {
     private showText(element: IntersectionObserverEntry['target']): void {
         element.animate(this.keyframes, {
             fill: 'forwards',
-            duration: 1500,
+            duration: 1000,
         });
     }
 

@@ -22,4 +22,23 @@ export class Common {
             this.isMobileView = false;
         }
     }
+
+    protected getElementByDataset<T extends HTMLElement>(dataset: string): T | null {
+        const datasetSelector: string = `[data-selector='${dataset}']`;
+        const numOfElements: number = document.querySelectorAll<T>(datasetSelector).length;
+
+        const element: T = document.querySelector<T>(datasetSelector) as T;
+
+        if (numOfElements < 1) {
+            console.warn('dataset selector doesn\'t exist');
+            return null;
+        }
+
+        if (numOfElements > 1) {
+            console.warn('dataset selector duplicated');
+            return null;
+        }
+
+        return element;
+    }
 }

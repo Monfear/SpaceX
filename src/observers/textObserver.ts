@@ -6,11 +6,12 @@ type Keyframes = {
 }[];
 
 export class TextObserver extends Common {
-    private textElements: HTMLParagraphElement[] =
+    private textElements: (HTMLParagraphElement | HTMLDivElement)[] =
         [
             this.getElementByDataset<HTMLParagraphElement>('falcon-description')!,
             this.getElementByDataset<HTMLParagraphElement>('aboutUs-text')!,
-            this.getElementByDataset<HTMLParagraphElement>('mission-quote')!
+            this.getElementByDataset<HTMLDivElement>('mission-quote')!,
+            ...document.querySelectorAll<HTMLDivElement>('.Mission .content__item__text')
         ];
 
     private keyframes: Keyframes = [
@@ -27,7 +28,7 @@ export class TextObserver extends Common {
     constructor() {
         super();
 
-        this.textElements.forEach((element: HTMLParagraphElement): void => {
+        this.textElements.forEach((element: HTMLParagraphElement | HTMLDivElement): void => {
             this.hideText(element);
         });
 
@@ -64,7 +65,7 @@ export class TextObserver extends Common {
         });
     }
 
-    private hideText(element: IntersectionObserverEntry['target']): void {
+    private hideText(element: HTMLParagraphElement | HTMLDivElement): void {
         element.animate(this.keyframes, {
             fill: 'forwards',
             duration: 1,

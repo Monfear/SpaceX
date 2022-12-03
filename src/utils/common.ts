@@ -27,8 +27,6 @@ export class Common {
         const datasetSelector: string = `[data-selector='${dataset}']`;
         const numOfElements: number = document.querySelectorAll<T>(datasetSelector).length;
 
-        const element: T = document.querySelector<T>(datasetSelector) as T;
-
         if (numOfElements < 1) {
             console.warn('dataset selector doesn\'t exist');
             return null;
@@ -38,6 +36,8 @@ export class Common {
             console.warn('dataset selector duplicated');
             return null;
         }
+
+        const element: T = document.querySelector<T>(datasetSelector) as T;
 
         return element;
     }

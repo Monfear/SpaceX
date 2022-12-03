@@ -2,10 +2,10 @@
 @use './../common/variables.scss' as *;
 
 .Mission {
-    padding-top: $spacing-section;
+    margin-top: $spacing-section;
+    overflow: hidden;
 
     & .WRAPPER {
-        border: 1px solid red;
         height: 100vh;
         background-image: url('./../img/mission.webp');
         background-position: center 100%;
@@ -18,7 +18,6 @@
 
     & .quote {
         text-align: center;
-
 
         &__text {
             line-height: 1.5rem;
@@ -33,19 +32,139 @@
     }
 
     & .content {
-
         &__item {
-            &__text {
-                &__heading {}
+            margin-top: 2rem;
 
-                &__description {}
+            &__text {
+                &__heading {
+                    text-transform: uppercase;
+                    font-size: $heading-medium;
+                    text-shadow: -3px -3px 4px $color-primary;
+                }
+
+                &__description {
+                    margin-top: 0.5rem;
+                }
             }
 
             &__picture {
                 width: 100%;
+                margin-block: 1rem;
+
 
                 &__img {
                     width: 100%;
+                    box-shadow: 0 0 10px 0 $color-primary;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-height: $mq-small) and (orientation: landscape) {
+    .Mission {
+        & .WRAPPER {
+            background-position: center 70%;
+        }
+    }
+}
+
+@media screen and (min-width: $mq-medium) {
+    .Mission {
+        & .WRAPPER {
+            height: 70vh;
+        }
+
+        & .quote {
+            font-size: $text-big + 0.1rem;
+            margin-top: 3rem;
+
+            &__text {}
+
+            &__author {
+                margin-top: 1rem;
+            }
+        }
+
+        & .content {
+            &__item {
+                &__text {
+                    &__heading {
+                        text-transform: uppercase;
+                        font-size: $heading-medium;
+                        text-shadow: -3px -3px 4px $color-primary;
+                    }
+
+                    &__description {
+                        margin-top: 0.5rem;
+                        font-size: $text-big;
+                    }
+                }
+
+                &__picture {
+                    width: 100%;
+                    margin-block: 1rem;
+
+
+                    &__img {
+                        width: 100%;
+                        box-shadow: 0 0 10px 0 $color-primary;
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $mq-big) {
+    .Mission {
+        margin-top: $spacing-section;
+
+        & .WRAPPER {
+            height: 100vh;
+            background-size: cover;
+        }
+
+        & .heading {}
+
+        & .quote {
+            width: 80%;
+            margin: 1rem auto 0;
+            font-size: $text-xlarge;
+
+            &__text {
+                line-height: 150%;
+                line-height: 1.5;
+            }
+        }
+
+        & .content {
+            &__item {
+                margin-top: 4rem;
+                display: flex;
+                align-items: center;
+                gap: 10%;
+
+                &:nth-child(2) {
+                    flex-direction: row-reverse;
+                }
+
+                &__text {
+                    flex-basis: 50%;
+
+                    &__heading {}
+
+                    &__description {}
+                }
+
+                &__picture {
+                    flex-basis: 50%;
+
+                    margin-block: initial;
+
+                    &__img {}
                 }
             }
         }

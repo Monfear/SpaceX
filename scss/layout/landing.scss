@@ -1,0 +1,67 @@
+@use './../common/mixins.scss' as *;
+@use './../common/variables.scss' as *;
+
+.Landing {
+    margin-top: $spacing-section;
+
+    & .heading {
+        @include heading;
+    }
+
+    & .caption {
+        font-size: $text-big;
+        text-align: center;
+    }
+
+    & .tabs {
+        margin: 1rem 0;
+
+        &__tab {
+            font-size: $text-small;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: $color-grey-dark;
+
+            &:nth-child(2) {
+                border-left: 2px solid $color-grey-dark;
+                margin-left: 0.5rem;
+                padding-left: 0.5rem;
+            }
+
+            &.active {
+                color: $color-white;
+            }
+        }
+    }
+
+    & .picture {
+        height: 50vh;
+
+        &__background {
+            width: 100%;
+            height: 100%;
+
+            background-image: url('./../img/droneship.jpg');
+            background-position: 80% 0;
+            background-size: cover;
+        }
+    }
+}
+
+@media screen and (max-height: $mq-small) and (orientation: landscape) {
+    .Landing {
+        & .picture {
+            height: 120vh;
+        }
+    }
+}
+
+@media screen and (min-width: $mq-big) {
+    .Landing {
+        margin-top: $spacing-section * 4;
+
+        & .picture {
+            height: 120vh;
+        }
+    }
+}

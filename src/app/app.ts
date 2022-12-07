@@ -6,6 +6,7 @@ import { Footer } from '../layout/footer';
 import { Navbar } from '../layout/navbar';
 import { Falcon2 } from "../layout/falcon2";
 import { Header } from "../layout/header";
+import { Landing } from "../layout/landing";
 
 export class App {
     constructor() {
@@ -18,5 +19,6 @@ export class App {
         new Footer();
 
         new Falcon2();
+        new Landing();
     }
 }

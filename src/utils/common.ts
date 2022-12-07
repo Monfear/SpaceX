@@ -1,5 +1,5 @@
 export class Common {
-    protected mobileBreakpoint: number = 992;
+    protected mobileBreakpoint: number = 1024;
     protected isMobileView: boolean = false;
 
     protected ACTIVE_CLASS: string = 'active';

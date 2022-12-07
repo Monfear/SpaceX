@@ -82,7 +82,7 @@ export class PictureObserver extends Common {
             {
                 root: null,
                 threshold: 0,
-                rootMargin: '-20% 0px',
+                rootMargin: '-100px 0px',
             }
         );
 

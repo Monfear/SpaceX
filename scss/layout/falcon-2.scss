@@ -117,6 +117,7 @@
                         &__link {
                             font-size: $text-small;
                             text-transform: uppercase;
+                            color: $color-grey-dark;
 
                             &:not(:nth-child(1)) {
                                 border-left: 2px solid $color-grey-dark;
@@ -125,7 +126,7 @@
                             }
 
                             &.active {
-                                color: $color-grey-dark;
+                                color: $color-white;
                             }
                         }
                     }

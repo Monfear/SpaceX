@@ -89,3 +89,38 @@ export const falconPayloadData: {
             imgUrl: require('./../../img/falcon-payload-dragon.webp')
         },
     ];
+
+export const landingImages: {
+    imgUrl: string,
+    position: {
+        mqXSmall: string,
+        mqSmall: string;
+        mqXSmallLandscape: string,
+        mqSmallLandscape: string,
+        mqMedium: string,
+        mqBig: string;
+    };
+}[] = [
+        {
+            imgUrl: require('./../../img/droneship.jpg'),
+            position: {
+                mqXSmall: '90% 0',
+                mqSmall: '80% 0',
+                mqXSmallLandscape: '30% 0',
+                mqSmallLandscape: '70% 0',
+                mqMedium: '35% 0%',
+                mqBig: '0% 0%'
+            }
+        },
+        {
+            imgUrl: require('./../../img/landing-zone.jpg'),
+            position: {
+                mqXSmall: '48% 0',
+                mqSmall: '35% 0',
+                mqXSmallLandscape: '23% 0',
+                mqSmallLandscape: '90% 0',
+                mqMedium: '20% 0%',
+                mqBig: '0% 0%'
+            }
+        },
+    ];

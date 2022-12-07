@@ -40,7 +40,6 @@ export class Landing extends Common {
     }
 
     private adjustBackgroundPosition(): void {
-        console.log(window.innerHeight);
 
         const activeTabIdx: number = this.navLinks.findIndex((link: HTMLSpanElement): boolean => {
             return link.classList.contains(this.ACTIVE_CLASS);

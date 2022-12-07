@@ -28,12 +28,12 @@ export class Common {
         const numOfElements: number = document.querySelectorAll<T>(datasetSelector).length;
 
         if (numOfElements < 1) {
-            console.warn('dataset selector doesn\'t exist');
+            console.error('dataset selector doesn\'t exist');
             return null;
         }
 
         if (numOfElements > 1) {
-            console.warn('dataset selector duplicated');
+            console.error('dataset selector duplicated');
             return null;
         }
 

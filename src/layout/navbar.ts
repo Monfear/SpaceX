@@ -3,7 +3,7 @@ import { Common } from '../utils/common';
 
 export class Navbar extends Common {
     private hamburgerBtn: HTMLButtonElement = document.querySelector('[data-hamburger]') as HTMLButtonElement;
-    private navbar: HTMLDivElement = document.querySelector('[data-navbar]') as HTMLDivElement;
+    private navbar: HTMLDivElement = this.getElementByDataset('navbar')!;
     private nav: HTMLElement = document.querySelector('[data-nav]') as HTMLElement;
     private navLinks: HTMLElement[] = Array.from(this.nav.querySelectorAll<HTMLElement>('a'));
 

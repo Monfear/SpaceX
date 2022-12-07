@@ -1,16 +1,35 @@
-export class Footer {
-    private arrowUpIcon: HTMLDivElement = document.querySelector('[data-arrowUpIcon]') as HTMLDivElement;
-    private formEl: HTMLFormElement = document.querySelector('[data-footerForm]') as HTMLFormElement;
-    private inputEl: HTMLInputElement = document.querySelector('[data-footerInput]') as HTMLInputElement;
-    private messageEl: HTMLParagraphElement = document.querySelector('[data-formMessage]') as HTMLParagraphElement;
+import { Common } from "../utils/common";
+
+export class Footer extends Common {
+    private arrowUpIcon: HTMLDivElement = document.querySelector<HTMLDivElement>('[data-arrowUpIcon]') as HTMLDivElement;
+    private formEl: HTMLFormElement = document.querySelector<HTMLFormElement>('[data-footerForm]') as HTMLFormElement;
+    private inputEl: HTMLInputElement = document.querySelector<HTMLInputElement>('[data-footerInput]') as HTMLInputElement;
+    private messageEl: HTMLParagraphElement = document.querySelector<HTMLParagraphElement>('[data-formMessage]') as HTMLParagraphElement;
+
+    private navLinks: HTMLAnchorElement[] = Array.from(document.querySelectorAll<HTMLAnchorElement>('.Footer .content__navigation__links__link'));
+    private sections: HTMLElement[] = Array.from(document.querySelectorAll<HTMLElement>('section'));
+    private navbar: HTMLDivElement = this.getElementByDataset('navbar')!;
 
     constructor() {
-        this.setupEventsListeners();
+        super();
+
+        this.setEventsListeners();
     }
 
-    private setupEventsListeners(): void {
+    private setEventsListeners(): void {
         this.arrowUpIcon.addEventListener('click', this.movePageTop.bind(this));
         this.formEl.addEventListener('submit', this.checkEmail.bind(this));
+
+        this.navLinks.forEach((link: HTMLAnchorElement, idx: number, arr: HTMLAnchorElement[]): void => {
+            link.addEventListener('click', (e: MouseEvent): void => {
+                e.preventDefault();
+
+                window.scrollTo({
+                    top: this.sections[idx].offsetTop - (this.isMobileView ? this.navbar.clientHeight : 0),
+                    behavior: "smooth",
+                });
+            });
+        });
     }
 
     private movePageTop(): void {

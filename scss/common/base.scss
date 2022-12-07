@@ -28,7 +28,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
     background-color: $color-black;
-
+    border: 2px solid $color-grey-dark;
 }
 
 ::-webkit-scrollbar-thumb:hover {

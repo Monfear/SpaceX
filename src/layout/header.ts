@@ -4,6 +4,7 @@ export class Header extends Common {
     private headerElement: HTMLElement = document.querySelector('[data-header]') as HTMLElement;
     private iconArrowDown: HTMLDivElement = document.querySelector('[data-header-iconArrowDown]') as HTMLDivElement;
     private cta: HTMLButtonElement = this.getElementByDataset('header-cta')!;
+    private navbar: HTMLElement = this.getElementByDataset('navbar')!;
 
     constructor() {
         super();
@@ -24,7 +25,7 @@ export class Header extends Common {
     private scroll(): void {
         window.scrollTo(
             {
-                top: this.headerElement.clientHeight,
+                top: this.headerElement.clientHeight - (this.isMobileView ? this.navbar.offsetHeight : 0),
                 behavior: "smooth"
             }
         );

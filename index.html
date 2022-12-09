@@ -15,7 +15,7 @@
     <script src="./src/main.ts" type="module" defer></script>
 </head>
 
-<body>
+<body id="index">
     <div class="Backdrop hide" data-backdrop></div>
 
     <div class="Navbar" data-selector="navbar">
@@ -32,14 +32,15 @@
                 </button>
 
                 <nav class="nav" data-nav>
-                    <a class="nav__link" href="./pages/falcon9.html">falcon 9</a>
-                    <a class="nav__link" href="./pages/falcon-heavy.html">falcon heavy</a>
-                    <a class="nav__link" href="./pages/dragon.html">dragon</a>
+                    <a class="nav__link" href="./pages/watch.html" target="_blank">watch</a>
+                    <a class="nav__link" href="#">falcon heavy</a>
+                    <a class="nav__link" href="#">dragon</a>
                     <a class="nav__link" href="#">starship</a>
                     <a class="nav__link" href="#">human spaceflight</a>
-                    <a class="nav__link" href="https://www.spacex.com/media/Capabilities&Services.pdf">capabilities &
+                    <a class="nav__link" href="https://www.spacex.com/media/Capabilities&Services.pdf"
+                        target="_blank">capabilities &
                         services</a>
-                    <a class="nav__link" href="https://shop.spacex.com/">shop</a>
+                    <a class="nav__link" href="https://shop.spacex.com/" target="_blank">shop</a>
                 </nav>
             </div>
         </div>
@@ -50,7 +51,7 @@
             <h2 class="content__subheading">upcoming launch</h2>
             <h1 class="content__heading">crew-5 mission</h1>
             <p class="content__caption">SpaceX designs, manufactures and launches advanced rockets and spacecraft.</p>
-            <button class="content__cta">watch</button>
+            <button class="content__cta" data-selector="header-cta">watch</button>
         </div>
 
         <div class="iconArrowDown" data-header-iconArrowDown>

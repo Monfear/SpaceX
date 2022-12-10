@@ -1,18 +1,18 @@
 import { Common } from "../utils/common";
 
 export class Header extends Common {
-    private headerElement: HTMLElement = document.querySelector('[data-header]') as HTMLElement;
-    private iconArrowDown: HTMLDivElement = document.querySelector('[data-header-iconArrowDown]') as HTMLDivElement;
-    private cta: HTMLButtonElement = this.getElementByDataset('header-cta')!;
-    private navbar: HTMLElement = this.getElementByDataset('navbar')!;
+    private headerElement: HTMLElement = this.getElementByDataset<HTMLElement>('header')!;
+    private iconArrowDown: HTMLDivElement = this.getElementByDataset<HTMLDivElement>('header-iconArrowDown')!;
+    private cta: HTMLButtonElement = this.getElementByDataset<HTMLButtonElement>('header-cta')!;
+    private navbar: HTMLElement = this.getElementByDataset<HTMLElement>('navbar')!;
 
     constructor() {
         super();
 
-        this.setupListeners();
+        this.setEventsListeners();
     }
 
-    private setupListeners(): void {
+    private setEventsListeners(): void {
         this.iconArrowDown.addEventListener('click', () => {
             this.scroll();
         });

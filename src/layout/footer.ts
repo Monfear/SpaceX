@@ -1,13 +1,13 @@
 import { Common } from "../utils/common";
 
 export class Footer extends Common {
-    private arrowUpIcon: HTMLDivElement = document.querySelector<HTMLDivElement>('[data-arrowUpIcon]') as HTMLDivElement;
-    private formEl: HTMLFormElement = document.querySelector<HTMLFormElement>('[data-footerForm]') as HTMLFormElement;
-    private inputEl: HTMLInputElement = document.querySelector<HTMLInputElement>('[data-footerInput]') as HTMLInputElement;
-    private messageEl: HTMLParagraphElement = document.querySelector<HTMLParagraphElement>('[data-formMessage]') as HTMLParagraphElement;
+    private arrowUpIcon: HTMLDivElement = this.getElementByDataset<HTMLDivElement>('footer-arrowUp')!;
+    private formEl: HTMLFormElement = this.getElementByDataset<HTMLFormElement>('footer-form')!;
+    private inputEl: HTMLInputElement = this.getElementByDataset<HTMLInputElement>('footer-input')!;
+    private messageEl: HTMLParagraphElement = this.getElementByDataset<HTMLParagraphElement>('footer-message')!;
 
     private navLinks: HTMLAnchorElement[] = Array.from(document.querySelectorAll<HTMLAnchorElement>('.Footer .content__navigation__links__link'));
-    private sections: HTMLElement[] = Array.from(document.querySelectorAll<HTMLElement>('section'));
+    private sections: HTMLElement[] = Array.from(document.querySelectorAll<HTMLElement>('#index section'));
     private navbar: HTMLDivElement = this.getElementByDataset('navbar')!;
 
     constructor() {

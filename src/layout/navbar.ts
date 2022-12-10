@@ -2,9 +2,9 @@ import { Backdrop } from './backdrop';
 import { Common } from '../utils/common';
 
 export class Navbar extends Common {
-    private hamburgerBtn: HTMLButtonElement = document.querySelector('[data-hamburger]') as HTMLButtonElement;
+    private hamburgerBtn: HTMLButtonElement = this.getElementByDataset('hamburger')!;
     private navbar: HTMLDivElement = this.getElementByDataset('navbar')!;
-    private nav: HTMLElement = document.querySelector('[data-nav]') as HTMLElement;
+    private nav: HTMLElement = this.getElementByDataset("nav")!;
     private navLinks: HTMLElement[] = Array.from(this.nav.querySelectorAll<HTMLElement>('a'));
 
     private backdrop: Backdrop = new Backdrop();

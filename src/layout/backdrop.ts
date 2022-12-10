@@ -1,12 +1,14 @@
-export class Backdrop {
-    public backdropEl: HTMLDivElement = document.querySelector('[data-backdrop]') as HTMLDivElement;
+import { Common } from "../utils/common";
+
+export class Backdrop extends Common {
+    public backdropEl: HTMLDivElement = this.getElementByDataset('backdrop')!;
 
     constructor() {
-        // pass
+        super();
     }
 
     public openBackdrop(): void {
-        this.backdropEl.classList.remove('hide');
+        this.backdropEl.classList.remove(this.HIDE_CLASS);
 
         let opacity: number = 0;
 
@@ -24,6 +26,6 @@ export class Backdrop {
     }
 
     public closeBackdrop(): void {
-        this.backdropEl.classList.add('hide');
+        this.backdropEl.classList.add(this.HIDE_CLASS);
     }
 }

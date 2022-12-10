@@ -1,0 +1,29 @@
+.Watch {
+    & .heading {}
+
+    & .caption {}
+
+    & .description {
+        &__text {}
+    }
+
+    & .picture {
+        &__video {}
+    }
+
+    & .countdown {
+        &__heading {}
+
+        &__info {
+            &__headings {
+                &__heading {}
+            }
+
+            &__item {
+                &__time {}
+
+                &__stage {}
+            }
+        }
+    }
+}

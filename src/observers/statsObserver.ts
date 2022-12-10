@@ -1,10 +1,12 @@
+import { Common } from "../utils/common";
+
 type Options = {
     root: Element | Document | null | undefined;
     threshold: number;
     margin: string;
 };
 
-export class StatsObserver {
+export class StatsObserver extends Common {
     private statsObserver: IntersectionObserver | undefined = undefined;
 
     private options: Options = {
@@ -13,15 +15,15 @@ export class StatsObserver {
         margin: '0px',
     };
 
-    private launchesCounterElement: HTMLHeadingElement = document.querySelector('[data-launches-counter]') as HTMLHeadingElement;
-    private landingsCounterElement: HTMLHeadingElement = document.querySelector('[data-landings-counter]') as HTMLHeadingElement;
-    private reflightsCounterElement: HTMLHeadingElement = document.querySelector('[data-reflights-counter]') as HTMLHeadingElement;
-
+    private statsElement: HTMLDivElement = this.getElementByDataset<HTMLDivElement>("falcon-stats")!;
+    private launchesCounterElement: HTMLHeadingElement = this.getElementByDataset<HTMLHeadingElement>("falcon-launchesCounter")!;
+    private landingsCounterElement: HTMLHeadingElement = this.getElementByDataset<HTMLHeadingElement>("falcon-landingsCounter")!;
+    private reflightsCounterElement: HTMLHeadingElement = this.getElementByDataset<HTMLHeadingElement>("falcon-reflightsCounter")!;
     private countersElements: HTMLHeadingElement[] = [this.launchesCounterElement, this.landingsCounterElement, this.reflightsCounterElement];
 
-    private statsElement: HTMLDivElement = document.querySelector('[data-stats]') as HTMLDivElement;
-
     constructor() {
+        super();
+
         this.setupStatsObserver();
     }
 
@@ -68,14 +70,14 @@ export class StatsObserver {
 
         let counter: number = 50;
 
-        intervalId = setInterval(() => {
+        intervalId = window.setInterval(() => {
             if (counter < maxCount - difference) {
                 counter++;
                 element.innerText = String(counter);
             } else {
                 clearInterval(intervalId);
 
-                intervalId = setInterval(() => {
+                intervalId = window.setInterval(() => {
                     if (counter < maxCount) {
                         counter++;
                         element.innerText = String(counter);

@@ -2,21 +2,21 @@ import { Common } from "../utils/common";
 import { falconStagesData, falconPayloadData } from "../data/data";
 
 export class Falcon2 extends Common {
-    private btnPrev: HTMLSpanElement = document.querySelector('[data-falcon-2-slider-btnPrev]') as HTMLSpanElement;
-    private btnNext: HTMLSpanElement = document.querySelector('[data-falcon-2-slider-btnNext]') as HTMLSpanElement;
-    private dotsContainer: HTMLDivElement = document.querySelector<HTMLDivElement>('[data-slider-dots]') as HTMLDivElement;
+    private btnPrev: HTMLSpanElement = this.getElementByDataset<HTMLSpanElement>("falcon2-prevBtn")!;
+    private btnNext: HTMLSpanElement = this.getElementByDataset<HTMLSpanElement>("falcon2-nextBtn")!;
+    private dotsContainer: HTMLDivElement = this.getElementByDataset<HTMLDivElement>('falcon2-dots')!;
     private dots: null | HTMLDivElement[] = null;
 
-    private slidesContainer: HTMLDivElement = document.querySelector('[data-falvon-2-slider-slides]') as HTMLDivElement;
+    private slidesContainer: HTMLDivElement = this.getElementByDataset<HTMLDivElement>('falcon2-slides')!;
 
-    private navLinksStages: HTMLElement[] = Array.from(document.querySelectorAll<HTMLElement>('[data-slider-link-stages]'));
-    private textContainerStages: HTMLDivElement = document.querySelector('[data-slider-textContainer-stages]') as HTMLDivElement;
-    private pictureStages: HTMLDivElement = document.querySelector('[data-slider-firstStage-img-stages]') as HTMLDivElement;
+    private navLinksFirstStage: HTMLElement[] = Array.from(document.querySelectorAll<HTMLElement>('.slider__slides__slide__content__nav__link'));
+    private textContainerFirstStage: HTMLDivElement = this.getElementByDataset('falcon2-firstStage-textContainer')!;
+    private pictureFirstStage = this.getElementByDataset('falcon2-firstStage-img')!;
 
-    private navLinksPayload: HTMLElement[] = Array.from(document.querySelectorAll<HTMLElement>('[data-slider-link-payload]'));
-    private textContainerPayload: HTMLDivElement = document.querySelector('[data-slider-textContainer-payload]') as HTMLDivElement;
-    private infoContainerPayload: HTMLDivElement = document.querySelector('[data-slider-info-payload]') as HTMLDivElement;
-    private picturePayload: HTMLDivElement = document.querySelector('[data-slider-img-payload]') as HTMLDivElement;
+    private navLinksPayload: HTMLElement[] = Array.from(document.querySelectorAll<HTMLElement>('.slider__slides__slide__content__nav__link'));
+    private textContainerPayload: HTMLDivElement = this.getElementByDataset<HTMLDivElement>('falcon2-payload-textContainer')!;
+    private infoContainerPayload: HTMLDivElement = this.getElementByDataset<HTMLDivElement>('falcon2-payload-info')!;
+    private picturePayload: HTMLDivElement = this.getElementByDataset<HTMLDivElement>('falcon2-payload-img')!;
 
     private translateXValue: number = 0;
     private translateXStep: number = 100;
@@ -25,7 +25,7 @@ export class Falcon2 extends Common {
     constructor() {
         super();
 
-        this.navLinksStages[0].classList.add(this.ACTIVE_CLASS);
+        this.navLinksFirstStage[0].classList.add(this.ACTIVE_CLASS);
         this.navLinksPayload[0].classList.add(this.ACTIVE_CLASS);
 
         this.renderDots();
@@ -70,7 +70,7 @@ export class Falcon2 extends Common {
     }
 
     private adjustContent(): void {
-        this.navLinksStages.forEach((navLink: HTMLElement, idx: number, arr: HTMLElement[]): void => {
+        this.navLinksFirstStage.forEach((navLink: HTMLElement, idx: number, arr: HTMLElement[]): void => {
             navLink.addEventListener('click', () => {
                 arr.forEach((item: HTMLElement) => {
                     if (item.classList.contains(this.ACTIVE_CLASS)) {
@@ -81,8 +81,8 @@ export class Falcon2 extends Common {
                 navLink.classList.add(this.ACTIVE_CLASS);
                 this.checkBackground();
 
-                this.textContainerStages.innerHTML = falconStagesData[idx].templateText;
-                this.pictureStages.style.backgroundImage = `url(${falconStagesData[idx].imgUrl})`;
+                this.textContainerFirstStage.innerHTML = falconStagesData[idx].templateText;
+                this.pictureFirstStage.style.backgroundImage = `url(${falconStagesData[idx].imgUrl})`;
             });
         });
 
@@ -105,8 +105,13 @@ export class Falcon2 extends Common {
     }
 
     private checkBackground(): void {
-        const activeLinkStages: number = this.navLinksStages.findIndex((link: HTMLElement): boolean => link.classList.contains(this.ACTIVE_CLASS));
-        const activeLinkPayload: number = this.navLinksPayload.findIndex((link: HTMLElement): boolean => link.classList.contains(this.ACTIVE_CLASS));
+        const activeLinkStages: number = this.navLinksFirstStage.findIndex((link: HTMLElement): boolean => {
+            return link.classList.contains(this.ACTIVE_CLASS);
+        });
+
+        const activeLinkPayload: number = this.navLinksPayload.findIndex((link: HTMLElement): boolean => {
+            return link.classList.contains(this.ACTIVE_CLASS);
+        });
 
         if (!this.isMobileView) {
             if (this.slidesContainer.children[1] instanceof HTMLDivElement) {
@@ -127,7 +132,7 @@ export class Falcon2 extends Common {
             }
 
             if (this.translateXValue >= (this.slidesContainer.children.length - 1) * this.translateXStep) {
-                this.btnNext.classList.add('inactive');
+                this.btnNext.classList.add(this.INACTIVE_CLASS);
             }
 
             if (this.btnPrev.classList.contains(this.INACTIVE_CLASS)) {

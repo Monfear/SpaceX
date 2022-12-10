@@ -227,6 +227,18 @@
 
             padding-bottom: 2rem;
 
+            &__navigation {
+                &__links {
+                    &__link {
+                        transition: all 0.2s ease-in;
+
+                        &:hover {
+                            color: $color-primary;
+                        }
+                    }
+                }
+            }
+
             &__contact {
                 &__info {
                     &__item {

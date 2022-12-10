@@ -16,7 +16,7 @@
 </head>
 
 <body id="index">
-    <div class="Backdrop hide" data-backdrop></div>
+    <div class="Backdrop hide" data-selector="backdrop"></div>
 
     <div class="Navbar" data-selector="navbar">
         <div class="CONTAINER">
@@ -25,13 +25,13 @@
                     <img class="logo__image" src="./img/logo.png" alt="logo">
                 </div>
 
-                <button class="hamburger" data-hamburger>
+                <button class="hamburger" data-selector="hamburger">
                     <span class="hamburger__line"></span>
                     <span class="hamburger__line"></span>
                     <span class="hamburger__line"></span>
                 </button>
 
-                <nav class="nav" data-nav>
+                <nav class="nav" data-selector="nav">
                     <a class="nav__link" href="./pages/watch.html" target="_blank">watch</a>
                     <a class="nav__link" href="#">falcon heavy</a>
                     <a class="nav__link" href="#">dragon</a>
@@ -46,7 +46,7 @@
         </div>
     </div>
 
-    <header class="Header" data-header>
+    <header class="Header" data-selector="header">
         <div class="content">
             <h2 class="content__subheading">upcoming launch</h2>
             <h1 class="content__heading">crew-5 mission</h1>
@@ -54,12 +54,12 @@
             <button class="content__cta" data-selector="header-cta">watch</button>
         </div>
 
-        <div class="iconArrowDown" data-header-iconArrowDown>
+        <div class="iconArrowDown" data-selector="header-iconArrowDown">
             <i class="iconArrowDown__image fa-solid fa-chevron-down"></i>
         </div>
     </header>
 
-    <section class="About-us" data-aboutUs>
+    <section class="About-us">
         <div class="CONTAINER">
             <h1 class="heading">about us</h1>
 
@@ -89,17 +89,17 @@
             <h1 class="heading">falcon 9</h1>
             <h2 class="subheading">first orbital class rocket capable of reflight</h2>
 
-            <div class="stats" data-stats>
+            <div class="stats" data-selector="falcon-stats">
                 <div class="stats__item">
-                    <h3 class="stats__item__counter" data-launches-counter>0</h3>
+                    <h3 class="stats__item__counter" data-selector="falcon-launchesCounter">0</h3>
                     <p class="stats__item__text">total launches</p>
                 </div>
                 <div class="stats__item">
-                    <h3 class="stats__item__counter" data-landings-counter>0</h3>
+                    <h3 class="stats__item__counter" data-selector="falcon-landingsCounter">0</h3>
                     <p class="stats__item__text">total landings</p>
                 </div>
                 <div class="stats__item">
-                    <h3 class="stats__item__counter" data-reflights-counter>0</h3>
+                    <h3 class="stats__item__counter" data-selector="falcon-reflightsCounter">0</h3>
                     <p class="stats__item__text">total reflights</p>
                 </div>
             </div>
@@ -117,17 +117,17 @@
         <div class="slider">
 
             <div class="slider__buttons">
-                <span class="slider__buttons__button" data-falcon-2-slider-btnPrev>
+                <span class="slider__buttons__button" data-selector="falcon2-prevBtn">
                     <i class="slider__buttons__button__icon fa-solid fa-chevron-left"></i>
                 </span>
-                <span class="slider__buttons__button" data-falcon-2-slider-btnNext>
+                <span class="slider__buttons__button" data-selector="falcon2-nextBtn">
                     <i class="slider__buttons__button__icon fa-solid fa-chevron-right"></i>
                 </span>
             </div>
 
-            <div class="slider__dots" data-slider-dots></div>
+            <div class="slider__dots" data-selector="falcon2-dots"></div>
 
-            <div class="slider__slides" data-falvon-2-slider-slides>
+            <div class="slider__slides" data-selector="falcon2-slides">
                 <div class="slider__slides__slide">
                     <div class="slider__slides__slide__picture"></div>
 
@@ -163,7 +163,7 @@
                 </div>
 
                 <div class="slider__slides__slide">
-                    <div class="slider__slides__slide__picture" data-slider-firstStage-img-stages></div>
+                    <div class="slider__slides__slide__picture" data-selector="falcon2-firstStage-img"></div>
 
                     <div class="CONTAINER">
                         <div class="slider__slides__slide__content">
@@ -171,15 +171,12 @@
                             <h2 class="slider__slides__slide__content__subheading">first stage</h2>
 
                             <nav class="slider__slides__slide__content__nav">
-                                <h3 class='slider__slides__slide__content__nav__link' data-slider-link-stages>outline
-                                </h3>
-                                <h3 class='slider__slides__slide__content__nav__link' data-slider-link-stages>engines
-                                </h3>
-                                <h3 class='slider__slides__slide__content__nav__link' data-slider-link-stages>landing
-                                    legs</h3>
+                                <h3 class='slider__slides__slide__content__nav__link'>outline</h3>
+                                <h3 class='slider__slides__slide__content__nav__link'>engines</h3>
+                                <h3 class='slider__slides__slide__content__nav__link'>landing legs</h3>
                             </nav>
 
-                            <div class="slider__slides__slide__content__textContainer" data-slider-textContainer-stages>
+                            <div class="slider__slides__slide__content__textContainer" data-selector="falcon2-firstStage-textContainer">
                                 <p class='slider__slides__slide__content__textContainer__text'>
                                     Falcon 9’s first stage incorporates nine Merlin engines and aluminum-lithium
                                     alloy tanks containing liquid oxygen and rocket-grade kerosene (RP-1) propellant.
@@ -255,7 +252,7 @@
                 </div>
 
                 <div class="slider__slides__slide">
-                    <div class="slider__slides__slide__picture" data-slider-img-payload></div>
+                    <div class="slider__slides__slide__picture" data-selector="falcon2-payload-img"></div>
 
                     <div class="CONTAINER">
                         <div class="slider__slides__slide__content">
@@ -263,14 +260,11 @@
                             <h2 class="slider__slides__slide__content__subheading">payload</h2>
 
                             <nav class="slider__slides__slide__content__nav">
-                                <h3 class='slider__slides__slide__content__nav__link' data-slider-link-payload>fairing
-                                </h3>
-                                <h3 class='slider__slides__slide__content__nav__link' data-slider-link-payload>dragon
-                                </h3>
+                                <h3 class='slider__slides__slide__content__nav__link'>fairing</h3>
+                                <h3 class='slider__slides__slide__content__nav__link'>dragon</h3>
                             </nav>
 
-                            <div class='slider__slides__slide__content__textContainer'
-                                data-slider-textContainer-payload>
+                            <div class='slider__slides__slide__content__textContainer' data-selector="falcon2-payload-textContainer">
                                 <p class='slider__slides__slide__content__textContainer__text'>
                                     Made of a carbon composite material, the fairing protects satellites
                                     on their way to orbit. The fairing is jettisoned approximately 3 minutes
@@ -279,7 +273,7 @@
                                 </p>
                             </div>
 
-                            <div class="slider__slides__slide__content__info" data-slider-info-payload>
+                            <div class="slider__slides__slide__content__info" data-selector="falcon2-payload-info">
                                 <div class="slider__slides__slide__content__info__item">
                                     <p class="slider__slides__slide__content__info__item__name">height</p>
                                     <p class="slider__slides__slide__content__info__item__value">13.1 m</p>
@@ -408,7 +402,7 @@
                     <img class="topBar__logo__image" src="./img/logo_2.png" alt="logo">
                 </div>
 
-                <div class="topBar__arrowUpIcon" data-arrowUpIcon>
+                <div class="topBar__arrowUpIcon" data-selector="footer-arrowUp">
                     <i class="fa-solid fa-arrow-up topBar__arrowUpIcon__icon"></i>
                 </div>
             </div>
@@ -467,10 +461,10 @@
                     <h2 class="content__newsletter__heading">subscribe newsletter</h2>
                     <p class="content__newsletter__caption">Subscribe to receive company updates and news.</p>
 
-                    <form class="content__newsletter__form" data-footerForm>
-                        <input type="text" class="content__newsletter__form__input" data-footerInput>
+                    <form class="content__newsletter__form" data-selector="footer-form">
+                        <input type="text" class="content__newsletter__form__input" data-selector="footer-input">
                         <button class="content__newsletter__form__button">submit</button>
-                        <p class="content__newsletter__form__message" data-formMessage>Please enter correct email
+                        <p class="content__newsletter__form__message" data-selector="footer-message">Please enter correct email
                             adress.
                         </p>
                     </form>

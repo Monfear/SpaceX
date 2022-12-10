@@ -4,14 +4,15 @@ export class Common {
 
     protected ACTIVE_CLASS: string = 'active';
     protected INACTIVE_CLASS: string = 'inactive';
+    protected HIDE_CLASS: string = 'hide';
 
     constructor() {
-        this.setupCommonEventsListeners();
+        this.setCommonEventsListeners();
 
         this.checkDevice();
     }
 
-    protected setupCommonEventsListeners(): void {
+    protected setCommonEventsListeners(): void {
         window.addEventListener('resize', this.checkDevice.bind(this));
     }
 

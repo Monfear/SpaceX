@@ -2,6 +2,8 @@ export class Common {
     protected mobileBreakpoint: number = 1024;
     protected isMobileView: boolean = false;
 
+    protected isIndexPage: undefined | boolean = undefined;
+
     protected ACTIVE_CLASS: string = 'active';
     protected INACTIVE_CLASS: string = 'inactive';
     protected HIDE_CLASS: string = 'hide';
@@ -10,6 +12,7 @@ export class Common {
         this.setCommonEventsListeners();
 
         this.checkDevice();
+        this.checkIsIndexPage();
     }
 
     protected setCommonEventsListeners(): void {
@@ -21,6 +24,14 @@ export class Common {
             this.isMobileView = true;
         } else {
             this.isMobileView = false;
+        }
+    }
+
+    protected checkIsIndexPage(): void {
+        if (document.body.id === 'index') {
+            this.isIndexPage = true;
+        } else {
+            this.isIndexPage = false;
         }
     }
 

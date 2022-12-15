@@ -20,16 +20,18 @@ export class Footer extends Common {
         this.arrowUpIcon.addEventListener('click', this.movePageTop.bind(this));
         this.formEl.addEventListener('submit', this.checkEmail.bind(this));
 
-        this.navLinks.forEach((link: HTMLAnchorElement, idx: number, arr: HTMLAnchorElement[]): void => {
-            link.addEventListener('click', (e: MouseEvent): void => {
-                e.preventDefault();
+        if (this.isIndexPage) {
+            this.navLinks.forEach((link: HTMLAnchorElement, idx: number, arr: HTMLAnchorElement[]): void => {
+                link.addEventListener('click', (e: MouseEvent): void => {
+                    e.preventDefault();
 
-                window.scrollTo({
-                    top: this.sections[idx].offsetTop - (this.isMobileView ? this.navbar.clientHeight : 0),
-                    behavior: "smooth",
+                    window.scrollTo({
+                        top: this.sections[idx].offsetTop - (this.isMobileView ? this.navbar.clientHeight : 0),
+                        behavior: "smooth",
+                    });
                 });
             });
-        });
+        }
     }
 
     private movePageTop(): void {

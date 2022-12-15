@@ -182,6 +182,7 @@
 
                 &__message {
                     visibility: hidden;
+                    padding-bottom: 1rem;
 
                     &.success {
                         color: hsl(120, 100%, 25%);

@@ -18,8 +18,6 @@ export class Navbar extends Common {
         this.adjustMediaQueries();
 
         this.watchMenuScroll();
-
-        console.log('navbar');
     }
 
     private setupEventsListeners(): void {

@@ -51,7 +51,7 @@
                     into Earth orbit, produced by American aerospace company SpaceX.
                 </p>
 
-                <article class="header__description" data-selector="watch-description">
+                <article class="header__description" data-selector="watch-header-description">
                     <p class="header__description__text">
                         SpaceX is targeting Thursday, December 8 for a Falcon 9 launch of the OneWeb 1 mission to
                         low-Earth orbit from Launch Complex 39A (LC-39A) at NASA's Kennedy Space Center in Florida.
@@ -75,13 +75,14 @@
         <main class="countdown">
             <div class="CONTAINER">
                 <h2 class="countdown__heading">countdown</h2>
-                <p class="countdown__caption">The Falcon 9 first stage booster supporting this mission previously
+                <p class="countdown__caption" data-selector="watch-countdown-caption">
+                    The Falcon 9 first stage booster supporting this mission previously
                     launched Dragon's first crew demonstration mission, the RADARSAT
                     Constellation Mission, SXM-7, and 10 Starlink missions.
                 </p>
             </div>
 
-            <picture class="countdown__picture">
+            <picture class="countdown__picture" data-selector="watch-countdown-video">
                 <video class="countdown__picture__video" src="./../video/falcon.mp4" controls></video>
             </picture>
 
@@ -210,9 +211,8 @@
                     <form class="content__newsletter__form" data-selector="footer-form">
                         <input type="text" class="content__newsletter__form__input" data-selector="footer-input">
                         <button class="content__newsletter__form__button">submit</button>
-                        <p class="content__newsletter__form__message" data-selector="footer-message">Please enter
-                            correct email
-                            adress.
+                        <p class="content__newsletter__form__message" data-selector="footer-message">
+                            Please enter correct email adress.
                         </p>
                     </form>
                 </div>

@@ -35,7 +35,7 @@ export class TextObserver extends Common {
         this.setTextObserver();
     }
 
-    public setTextObserver(): void {
+    private setTextObserver(): void {
         const textObserver: IntersectionObserver = new IntersectionObserver(
             (entries: IntersectionObserverEntry[], observer: IntersectionObserver): void => {
                 entries.forEach((entry: IntersectionObserverEntry) => {

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,8 +14,119 @@
 </head>
 
 <body id="career">
+    <div class="Backdrop hide" data-selector="backdrop"></div>
+
+    <div class="Navbar" data-selector="navbar">
+        <div class="CONTAINER">
+            <div class="wrapper">
+                <div class="logo">
+                    <img class="logo__image" src="./../img/logo.png" alt="logo">
+                </div>
+
+                <button class="hamburger" data-selector="hamburger">
+                    <span class="hamburger__line"></span>
+                    <span class="hamburger__line"></span>
+                    <span class="hamburger__line"></span>
+                </button>
+
+                <nav class="nav" data-selector="nav">
+                    <a class="nav__link" href="./../index.html">home</a>
+                    <a class="nav__link" href="./watch.html">watch</a>
+                    <a class="nav__link" href="https://www.spacex.com/media/Capabilities&Services.pdf" target="_blank">
+                        capabilities & services</a>
+                    <a class="nav__link" href="https://shop.spacex.com/" target="_blank">shop</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+
     <section class="Career">
-        <!-- pass -->
+        <header class="header">
+
+        </header>
     </section>
+
+    <footer class="Footer">
+        <div class="CONTAINER">
+
+            <div class="topBar">
+                <div class="topBar__logo">
+                    <img class="topBar__logo__image" src="./../img/logo_2.png" alt="logo">
+                </div>
+
+                <div class="topBar__arrowUpIcon" data-selector="footer-arrowUp">
+                    <i class="fa-solid fa-arrow-up topBar__arrowUpIcon__icon"></i>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="content__navigation">
+                    <h2 class="content__navigation__heading">navigation</h2>
+
+                    <div class="content__navigation__links">
+                        <a class="content__navigation__links__link" href="/">about us</a>
+                        <a class="content__navigation__links__link" href="/">falcon 9</a>
+                        <a class="content__navigation__links__link" href="/">stages</a>
+                        <a class="content__navigation__links__link" href="/">mission</a>
+                        <a class="content__navigation__links__link" href="/">landing</a>
+                    </div>
+                </div>
+
+                <div class="content__contact">
+                    <h2 class="content__contact__heading">contact</h2>
+
+                    <div class="content__contact__info">
+                        <div class="content__contact__info__item">
+                            <div class="content__contact__info__item__icon">
+                                <i class="content__contact__info__item__icon__image fa-solid fa-location-dot"></i>
+                            </div>
+                            <p class="content__contact__info__item__text">Hawthorne, CA 90250, US</p>
+                        </div>
+                        <div class="content__contact__info__item">
+                            <div class="content__contact__info__item__icon">
+                                <i class="content__contact__info__item__icon__image fa-solid fa-mobile-screen"></i>
+                            </div>
+                            <p class="content__contact__info__item__text">+1 310-363-6000</p>
+                        </div>
+                        <div class="content__contact__info__item">
+                            <div class="content__contact__info__item__icon">
+                                <i class="content__contact__info__item__icon__image fa-solid fa-envelope"></i>
+                            </div>
+                            <p class="content__contact__info__item__text">spacex@space.com</p>
+                        </div>
+                    </div>
+
+                    <div class="content__contact__socials">
+                        <div class="content__contact__socials__icon">
+                            <i class="content__contact__socials__icon__image fa-brands fa-instagram"></i>
+                        </div>
+                        <div class="content__contact__socials__icon">
+                            <i class="content__contact__socials__icon__image fa-brands fa-facebook"></i>
+                        </div>
+                        <div class="content__contact__socials__icon">
+                            <i class="content__contact__socials__icon__image fa-brands fa-linkedin"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content__newsletter">
+                    <h2 class="content__newsletter__heading">subscribe newsletter</h2>
+                    <p class="content__newsletter__caption">Subscribe to receive company updates and news.</p>
+
+                    <form class="content__newsletter__form" data-selector="footer-form">
+                        <input type="text" class="content__newsletter__form__input" data-selector="footer-input">
+                        <button class="content__newsletter__form__button">submit</button>
+                        <p class="content__newsletter__form__message" data-selector="footer-message">
+                            Please enter correct email adress.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="bottomBar">
+            <p class="bottomBar__text">Copyright 2022 © SpaceX. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
+
 </html>

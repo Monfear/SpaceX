@@ -1,10 +1,13 @@
 import { Common } from "../utils/common";
+import { Footer } from "./footer";
+import { Navbar } from "./navbar";
 
 class Career extends Common {
     constructor() {
         super();
 
-        console.log('career');
+        new Navbar();
+        new Footer();
     }
 }
 

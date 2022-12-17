@@ -3,7 +3,7 @@ import { Common } from "../utils/common";
 import { Footer } from "./footer";
 import { Navbar } from "./navbar";
 
-export class Watch extends Common {
+class Watch extends Common {
     constructor() {
         super();
 
@@ -14,4 +14,6 @@ export class Watch extends Common {
     }
 }
 
-new Watch();
+window.onload = function (): void {
+    new Watch();
+};

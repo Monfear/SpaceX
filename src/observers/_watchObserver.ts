@@ -102,7 +102,7 @@ export class WatchObserver extends Common {
 
     private showVideo(element: HTMLPictureElement): void {
         element.animate(this.videoKeyframes, {
-            duration: 1000,
+            duration: 1500,
             fill: 'forwards',
         });
     }

@@ -3,7 +3,7 @@
 
 
 body#career {
-    .Career {
+    & .Career {
         & .header {
             padding-top: $spacing-section * 5;
             height: 100vh;
@@ -80,6 +80,122 @@ body#career {
                     &.error {
                         visibility: visible;
                         color: $color-error;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (orientation: landscape) and (max-height: $mq-small) {
+    body#career {
+        & .Career {
+            & .header {
+                height: auto;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $mq-medium) {
+    body#career {
+        .Career {
+            & .header {
+                &__heading {}
+
+                &__caption {}
+
+                &__form {
+                    margin-top: 5rem;
+
+                    &__select {
+                        width: 70%;
+
+                        &__option {}
+                    }
+
+                    &__item {
+                        margin-top: 2rem;
+
+                        &__label {}
+
+                        &__input {
+                            &::file-selector-button {}
+                        }
+                    }
+
+                    &__button {
+                        @include button;
+                        margin-top: 3rem;
+                    }
+
+                    &__message {
+
+                        &.success {}
+
+                        &.error {}
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $mq-big) {
+    body#career {
+        .Career {
+            & .header {
+                &__heading {}
+
+                &__caption {
+                    margin: 0 auto;
+                    width: 70%;
+                    font-size: $text-big;
+                }
+
+                &__form {
+                    margin-top: 3rem;
+
+                    &__select {
+                        width: 30%;
+
+                        &__option {}
+                    }
+
+                    &__item {
+                        margin-top: 0.5rem;
+
+                        &__label {}
+
+                        &__input {
+                            &::file-selector-button {
+                                cursor: pointer;
+                                transition: all 0.3s ease-in;
+
+                                &:hover {
+                                    background-color: $color-primary;
+                                    color: $color-black
+                                }
+                            }
+                        }
+                    }
+
+                    &__button {
+                        @include button;
+                        margin-top: 3rem;
+                    }
+
+                    &__message {
+                        font-size: $text-medium;
+                        // font-weight: bold;
+                        width: 60%;
+                        text-align: center;
+                        padding: 0.5rem;
+                        background-color: rgba(0, 0, 0, 0.5);
+
+                        &.success {}
+
+                        &.error {}
                     }
                 }
             }

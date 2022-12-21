@@ -7,6 +7,8 @@ export class Common {
     protected ACTIVE_CLASS: string = 'active';
     protected INACTIVE_CLASS: string = 'inactive';
     protected HIDE_CLASS: string = 'hide';
+    protected SUCCESS_CLASS: string = 'success';
+    protected ERROR_CLASS: string = 'error';
 
     constructor() {
         this.setCommonEventsListeners();

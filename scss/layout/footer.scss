@@ -185,12 +185,12 @@
                     padding-bottom: 1rem;
 
                     &.success {
-                        color: hsl(120, 100%, 25%);
+                        color: $color-success;
                         visibility: visible;
                     }
 
                     &.error {
-                        color: hsl(0, 91%, 36%);
+                        color: $color-error;
                         visibility: visible;
                     }
                 }

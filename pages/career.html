@@ -32,6 +32,7 @@
                 <nav class="nav" data-selector="nav">
                     <a class="nav__link" href="./../index.html">home</a>
                     <a class="nav__link" href="./watch.html">watch</a>
+                    <a class="nav__link" href="./career.html">career</a>
                     <a class="nav__link" href="https://www.spacex.com/media/Capabilities&Services.pdf" target="_blank">
                         capabilities & services</a>
                     <a class="nav__link" href="https://shop.spacex.com/" target="_blank">shop</a>
@@ -42,7 +43,31 @@
 
     <section class="Career">
         <header class="header">
+            <div class="CONTAINER">
+                <h1 class="header__heading">find your future</h1>
+                <p class="header__caption">
+                    SpaceX is looking for world-class talent ready to tackle challenging projects
+                    that will ultimately enable life on other planets. We are an equal opportunity
+                    employer offering competitive salaries, comprehensive health benefits and equity packages.
+                </p>
 
+                <form class="header__form" data-selector="career-form">
+                    <select class="header__form__select" data-selector="career-select" name="categories">
+                        <option class="header__form__select__option" value="null" disabled="true" selected="true">
+                            Browse Categories
+                        </option>
+                    </select>
+
+                    <div class="header__form__item">
+                        <label class="header__form__item__label">add your cv</label>
+                        <input class="header__form__item__input" type="file" data-selector="career-fileInput">
+                    </div>
+
+                    <button class="header__form__button">send your application</button>
+
+                    <p class="header__form__message" data-selector="career-message">message</p>
+                </form>
+            </div>
         </header>
     </section>
 

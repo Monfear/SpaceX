@@ -124,3 +124,31 @@ export const landingImages: {
             }
         },
     ];
+
+export const careerCategories: string[] = [
+    'Application Software',
+    'Avionics',
+    'Build and Flight Reliability',
+    'Civil Engineering and Construction',
+    'College and University - Internships and Co-Ops',
+    'Environmental Health and Safety',
+    'Facilities and Physical Security',
+    'Finance and Purchasing',
+    'Food Services',
+    'Guidance, Navigation and Control',
+    'Human Resources and Office Support',
+    'Information Security',
+    'Information Technology',
+    'Launch - Engineering',
+    'Launch - Technicians and Trade Skills',
+    'Legal and Government Affairs',
+    'Machining Operations',
+    'Manufacturing and Production - Engineering',
+    'Manufacturing and Production - Leadership and Operations',
+    'Manufacturing and Production - Quality Assurance',
+    'Manufacturing and Production - Technicians and Trade Skills',
+    'Marketing and Communications',
+    'Materials Engineering',
+    'Mission Management',
+    'Non-Destructive Evaluation',
+];

@@ -32,7 +32,7 @@ export class Header extends Common {
     }
 
     private navigateToSection(): void {
-        // window.location.href = "./pages/watch.html";
-        window.open("./pages/watch.html", '_blank');
+        window.location.href = "./pages/watch.html";
+        // window.open("./pages/watch.html", '_blank');
     }
 }

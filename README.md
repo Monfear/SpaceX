@@ -11,11 +11,13 @@ You can find informations about SpaceX company in general and also vehicles, mis
 -   HTML
 -   SCSS
 -   Javascript
+-   Typescript
 
 ## Usage
 
 To preview you can just click link attached to this repo or download zip/clone repo and npm install & npm start.
 
+## Preview
 <br>
 <p align="center">
   <img src='./img/preview.png'>

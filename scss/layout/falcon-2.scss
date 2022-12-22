@@ -120,6 +120,10 @@
                             text-transform: uppercase;
                             color: $color-grey-dark;
 
+                            &:hover {
+                                color: $color-white;
+                            }
+
                             &:not(:nth-child(1)) {
                                 border-left: 2px solid $color-grey-dark;
                                 margin-left: 0.5rem;

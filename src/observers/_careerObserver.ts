@@ -1,24 +1,16 @@
-type TextKeyframes = {
-    opacity: number,
-    transform: string;
-}[];
+import { Common } from "../utils/common";
+import { textAnimations } from "../utils/animations";
 
-export class CareerObserver {
+export class CareerObserver extends Common {
+    private captionEl: HTMLParagraphElement = this.getElementByDataset<HTMLParagraphElement>('career-caption')!;
+
     constructor() {
-        // pass
-        console.log('career observer');
-    }
+        super();
 
-    private textKeyframes: TextKeyframes = [
-        {
-            opacity: 0,
-            transform: 'translateY(20px)',
-        },
-        {
-            opacity: 1,
-            transform: 'translateY(0)',
-        },
-    ];
+        textAnimations.hideText(this.captionEl);
+
+        this.setObserver();
+    }
 
     private setObserver(): void {
         const observer: IntersectionObserver = new IntersectionObserver(
@@ -26,10 +18,10 @@ export class CareerObserver {
                 entries.forEach((entry: IntersectionObserverEntry) => {
                     if (entry.isIntersecting) {
                         if (entry.target instanceof HTMLElement) {
-                            // pass
+                            textAnimations.showText(entry.target);
                         }
 
-                        // observer.unobserve(entry.target);
+                        observer.unobserve(entry.target);
                     }
                 });
             },
@@ -39,20 +31,7 @@ export class CareerObserver {
                 rootMargin: '-150px 0px',
             }
         );
-    }
 
-    private showText(element: IntersectionObserverEntry['target']): void {
-        element.animate(this.textKeyframes, {
-            fill: 'forwards',
-            duration: 1000,
-        });
-    }
-
-    private hideText(element: HTMLElement): void {
-        element.animate(this.textKeyframes, {
-            fill: 'forwards',
-            duration: 1,
-            direction: 'reverse',
-        });
+        observer.observe(this.captionEl);
     }
 }

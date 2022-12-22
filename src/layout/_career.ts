@@ -3,6 +3,7 @@ import { Footer } from "./footer";
 import { Navbar } from "./navbar";
 
 import { careerCategories } from "../data/data";
+import { CareerObserver } from "../observers/_careerObserver";
 
 class Career extends Common {
     private selectEl: HTMLSelectElement = this.getElementByDataset<HTMLSelectElement>('career-select')!;
@@ -15,6 +16,7 @@ class Career extends Common {
 
         new Navbar();
         new Footer();
+        new CareerObserver();
 
         this.setListeners();
 

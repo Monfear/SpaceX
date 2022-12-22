@@ -9,11 +9,11 @@ export class Falcon2 extends Common {
 
     private slidesContainer: HTMLDivElement = this.getElementByDataset<HTMLDivElement>('falcon2-slides')!;
 
-    private navLinksFirstStage: HTMLElement[] = Array.from(document.querySelectorAll<HTMLElement>('.slider__slides__slide__content__nav__link'));
+    private navLinksFirstStage: HTMLElement[] = Array.from(document.querySelectorAll<HTMLElement>('#nav-firstStage .slider__slides__slide__content__nav__link'));
     private textContainerFirstStage: HTMLDivElement = this.getElementByDataset('falcon2-firstStage-textContainer')!;
     private pictureFirstStage = this.getElementByDataset('falcon2-firstStage-img')!;
 
-    private navLinksPayload: HTMLElement[] = Array.from(document.querySelectorAll<HTMLElement>('.slider__slides__slide__content__nav__link'));
+    private navLinksPayload: HTMLElement[] = Array.from(document.querySelectorAll<HTMLElement>('#nav-payload .slider__slides__slide__content__nav__link'));
     private textContainerPayload: HTMLDivElement = this.getElementByDataset<HTMLDivElement>('falcon2-payload-textContainer')!;
     private infoContainerPayload: HTMLDivElement = this.getElementByDataset<HTMLDivElement>('falcon2-payload-info')!;
     private picturePayload: HTMLDivElement = this.getElementByDataset<HTMLDivElement>('falcon2-payload-img')!;
@@ -37,7 +37,8 @@ export class Falcon2 extends Common {
             this.btnPrev.classList.add(this.INACTIVE_CLASS);
         }
 
-        window.addEventListener('resize', this.checkBackground.bind(this));
+        window.addEventListener('resize', this.checkBackgroundFirstStage.bind(this));
+        window.addEventListener('resize', this.checkBackgroundPayload.bind(this));
     }
 
     private moveSlider(): void {
@@ -79,7 +80,7 @@ export class Falcon2 extends Common {
                 });
 
                 navLink.classList.add(this.ACTIVE_CLASS);
-                this.checkBackground();
+                this.checkBackgroundFirstStage();
 
                 this.textContainerFirstStage.innerHTML = falconStagesData[idx].templateText;
                 this.pictureFirstStage.style.backgroundImage = `url(${falconStagesData[idx].imgUrl})`;
@@ -95,7 +96,7 @@ export class Falcon2 extends Common {
                 });
 
                 navLink.classList.add(this.ACTIVE_CLASS);
-                this.checkBackground();
+                this.checkBackgroundPayload();
 
                 this.textContainerPayload.innerHTML = falconPayloadData[idx].templateText;
                 this.infoContainerPayload.innerHTML = falconPayloadData[idx].templateInfo;
@@ -104,12 +105,8 @@ export class Falcon2 extends Common {
         });
     }
 
-    private checkBackground(): void {
+    private checkBackgroundFirstStage(): void {
         const activeLinkStages: number = this.navLinksFirstStage.findIndex((link: HTMLElement): boolean => {
-            return link.classList.contains(this.ACTIVE_CLASS);
-        });
-
-        const activeLinkPayload: number = this.navLinksPayload.findIndex((link: HTMLElement): boolean => {
             return link.classList.contains(this.ACTIVE_CLASS);
         });
 
@@ -117,7 +114,15 @@ export class Falcon2 extends Common {
             if (this.slidesContainer.children[1] instanceof HTMLDivElement) {
                 this.slidesContainer.children[1].style.backgroundImage = `url(${falconStagesData[activeLinkStages].imgUrl})`;
             }
+        }
+    }
 
+    private checkBackgroundPayload(): void {
+        const activeLinkPayload: number = this.navLinksPayload.findIndex((link: HTMLElement): boolean => {
+            return link.classList.contains(this.ACTIVE_CLASS);
+        });
+
+        if (!this.isMobileView) {
             if (this.slidesContainer.children[4] instanceof HTMLDivElement) {
                 this.slidesContainer.children[4].style.backgroundImage = `url(${falconPayloadData[activeLinkPayload].imgUrl})`;
             }

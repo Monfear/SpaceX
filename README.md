@@ -11,6 +11,7 @@ You can find informations about SpaceX company in general and also vehicles, mis
 -   HTML
 -   SCSS
 -   Javascript
+-   Typescript
 
 ## Usage
 
